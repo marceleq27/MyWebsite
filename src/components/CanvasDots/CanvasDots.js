@@ -35,7 +35,7 @@ class CanvasDots extends Component {
       this.radius = radius;
       this.color = color;
       this.radians = Math.random() * Math.PI * 2;
-      this.velocity = 0.02;
+      this.velocity = 0.01;
       this.distanceFromCenter = randomIntFromRange(180, 300);
 
       this.update = () => {
@@ -87,7 +87,7 @@ class CanvasDots extends Component {
       this.radius = radius;
       this.color = color;
       this.radians = Math.random() * Math.PI * 2;
-      this.velocity = 0.03;
+      this.velocity = 0.01;
       this.distanceFromCenter = randomIntFromRange(120, 200);
 
       this.update = () => {
