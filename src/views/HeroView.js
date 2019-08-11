@@ -100,7 +100,7 @@ const StyledButton = styled.button`
 
 const StyledP = styled.p`
   position: fixed;
-  bottom: 1%;
+  bottom: 2%;
   left: 0;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
