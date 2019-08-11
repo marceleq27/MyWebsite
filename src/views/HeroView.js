@@ -10,12 +10,12 @@ const animation = keyframes`
     }
 
     100%{
-        transform:translateX(150%);
+        transform:translateX(200%);
     }
 `;
 
 const StyledSection = styled.section`
-  position: absolute;
+  position: relative;
   text-align: center;
   height: 100vh;
   width: 100vw;
@@ -29,14 +29,10 @@ const StyledSection = styled.section`
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-text-stroke: 2px #000;
+    background-color: #fff;
+    padding: 10px 0;
     z-index: 15;
     width: 100%;
-
-    &::first-letter {
-      font-size: 60px;
-      color: transparent;
-    }
   }
 `;
 const StyledImage = styled.img`
@@ -66,7 +62,7 @@ const Number = styled.p`
 const StyledButton = styled.button`
   padding: 20px;
   background-color: #000;
-  position: relative;
+  position: absolute;
   border: none;
   color: #fff;
   font-size: 15px;
@@ -74,7 +70,7 @@ const StyledButton = styled.button`
   letter-spacing: 2px;
   font-weight: 300;
   top: 85%;
-  left: 15%;
+  right: 5%;
   text-align: right;
   transition: 0.2s;
   z-index: 5;
@@ -103,16 +99,14 @@ const StyledButton = styled.button`
 `;
 
 const StyledP = styled.p`
-  position: absolute;
+  position: fixed;
   bottom: 1%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 11px;
-  width: 100%;
-  animation: ${animation} 8s linear infinite;
+  animation: ${animation} 6s linear infinite;
 `;
 
 const StyledLogo = styled.img`

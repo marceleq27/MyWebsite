@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import '../../utils/hamburgers.css';
 
 const StyledHamburger = styled.button`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  z-index: 50;
 `;
 
 const StyledP = styled.p`
@@ -13,6 +14,10 @@ const StyledP = styled.p`
   margin-left: 10px;
   text-align: center;
   font-weight: 400;
+  color: #000;
+  &.active {
+    color: #fff;
+  }
 `;
 
 class Hamburger extends Component {
@@ -21,6 +26,13 @@ class Hamburger extends Component {
   handleClick = () => {
     const hamburger = document.querySelector('.hamburger');
     hamburger.classList.toggle('is-active');
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+    this.setState(prevState => ({
+      isClicked: !prevState.isClicked,
+    }));
   };
 
   render() {
@@ -33,7 +45,7 @@ class Hamburger extends Component {
         <span className="hamburger-box">
           <span className="hamburger-inner" />
         </span>
-        <StyledP>Menu</StyledP>
+        <StyledP className="menu">Menu</StyledP>
       </StyledHamburger>
     );
   }
