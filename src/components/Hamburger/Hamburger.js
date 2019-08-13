@@ -9,16 +9,16 @@ const StyledHamburger = styled.button`
   z-index: 50;
 `;
 
-const StyledP = styled.p`
-  display: inline-block;
-  margin-left: 10px;
-  text-align: center;
-  font-weight: 400;
-  color: #000;
-  &.active {
-    color: #fff;
-  }
-`;
+// const StyledP = styled.p`
+//   display: inline-block;
+//   margin-left: 10px;
+//   text-align: center;
+//   font-weight: 400;
+//   color: #000;
+//   &.active {
+//     color: #fff;
+//   }
+// `;
 
 class Hamburger extends Component {
   state = {};
@@ -28,8 +28,8 @@ class Hamburger extends Component {
     hamburger.classList.toggle('is-active');
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('active');
+    // const menu = document.querySelector('.menu');
+    // menu.classList.toggle('active');
     this.setState(prevState => ({
       isClicked: !prevState.isClicked,
     }));
@@ -45,7 +45,7 @@ class Hamburger extends Component {
         <span className="hamburger-box">
           <span className="hamburger-inner" />
         </span>
-        <StyledP className="menu">Menu</StyledP>
+        {/* <StyledP className="menu">Menu</StyledP> */}
       </StyledHamburger>
     );
   }

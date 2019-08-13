@@ -124,7 +124,7 @@ const HeroView = () => {
       <StyledLogo src={logo} alt="fdfsfs" />
       <StyledImage src={zdj2} alt="sddfsfsdadfdsfada" />
       <h1>Hi, I&apos;m Marcel.</h1>
-      <Number>01</Number>
+      <Number>00</Number>
       <StyledButton>Look at my projects</StyledButton>
       <StyledP>I want to be a junior frontend developer!</StyledP>
     </StyledSection>
