@@ -68,7 +68,7 @@ const StyledButton = styled.button`
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 2px;
   font-weight: 300;
-  bottom: 8%;
+  bottom: 10%;
   right: 5%;
   text-align: right;
   transition: 0.2s;

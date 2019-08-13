@@ -6,19 +6,8 @@ const StyledHamburger = styled.button`
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 50;
+  z-index: 5;
 `;
-
-// const StyledP = styled.p`
-//   display: inline-block;
-//   margin-left: 10px;
-//   text-align: center;
-//   font-weight: 400;
-//   color: #000;
-//   &.active {
-//     color: #fff;
-//   }
-// `;
 
 class Hamburger extends Component {
   state = {};
@@ -45,7 +34,6 @@ class Hamburger extends Component {
         <span className="hamburger-box">
           <span className="hamburger-inner" />
         </span>
-        {/* <StyledP className="menu">Menu</StyledP> */}
       </StyledHamburger>
     );
   }

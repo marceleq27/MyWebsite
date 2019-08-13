@@ -117,8 +117,6 @@ class NavigationView extends Component {
     hamburger.classList.toggle('is-active');
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
-    // const menu = document.querySelector('.menu');
-    // menu.classList.toggle('active');
   };
 
   render() {

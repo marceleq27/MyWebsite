@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import CanvasDots from 'components/CanvasDots/CanvasDots';
 import GlobalStyles from './theme/GlobalStyles';
@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename="/">
+      <Router basename={process.env.PUBLIC_URL}>
         <GlobalStyles />
         <LoadingScreenView />
         <NavigationView />
@@ -31,7 +31,7 @@ class App extends Component {
           )}
         />
         <CanvasDots />
-      </HashRouter>
+      </Router>
     );
   }
 }
