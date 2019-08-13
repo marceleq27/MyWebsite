@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfo, faCode } from '@fortawesome/free-solid-svg-icons';
+import ReactPageScroller from 'react-page-scroller';
 import comnet from '../utils/comnet1.png';
 import conventer from '../utils/conventer.png';
 import weather from '../utils/weather.png';
@@ -132,97 +133,150 @@ const StyledP = styled.p`
   z-index: 5;
 `;
 
-const AboutMeView = () => {
-  return (
-    <StyledSection>
-      <Container>
-        <ContainerPhotoNumber>
-          <Image />
-          <p>01</p>
-        </ContainerPhotoNumber>
-        <StyledText>COMNET</StyledText>
-        <StyledText className="front">COMNET</StyledText>
-        <Circle>
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faInfo} />
-          </a>
-        </Circle>
-        <Circle className="second">
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faCode} />
-          </a>
-        </Circle>
-        <StyledP>ANIMATIONS | REACT | STYLED COMPONENTS</StyledP>
-      </Container>
-      <Container>
-        <ContainerPhotoNumber>
-          <Image two={`url(${conventer})`} />
-          <p>02</p>
-        </ContainerPhotoNumber>
-        <StyledText topSecond="35%" rightSecond="20%">
-          CONVENTER
-        </StyledText>
-        <StyledText topSecond="35%" rightSecond="20%" className="front">
-          CONVENTER
-        </StyledText>
-        <Circle>
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faInfo} />
-          </a>
-        </Circle>
-        <Circle className="second">
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faCode} />
-          </a>
-        </Circle>
-        <StyledP>SCSS | REACT | STYLED COMPONENTS | API</StyledP>
-      </Container>
-      <Container>
-        <ContainerPhotoNumber>
-          <Image three={`url(${weather})`} />
-          <p>03</p>
-        </ContainerPhotoNumber>
-        <StyledText rightSecond="35%">WEATHER</StyledText>
-        <StyledText rightSecond="35%" className="front">
-          WEATHER
-        </StyledText>
-        <Circle>
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faInfo} />
-          </a>
-        </Circle>
-        <Circle className="second">
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faCode} />
-          </a>
-        </Circle>
-        <StyledP>API | REACT | STYLED COMPONENTS</StyledP>
-      </Container>
-      <Container>
-        <ContainerPhotoNumber>
-          <Image four={`url(${grawernia})`} />
-          <p>04</p>
-        </ContainerPhotoNumber>
-        <StyledText topSecond="35%" rightSecond="20%">
-          GRAWERNIA
-        </StyledText>
-        <StyledText topSecond="35%" rightSecond="20%" className="front">
-          GRAWERNIA
-        </StyledText>
-        <Circle>
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faInfo} />
-          </a>
-        </Circle>
-        <Circle className="second">
-          <a href="http://com-net.com.pl">
-            <FontAwesomeIcon icon={faCode} />
-          </a>
-        </Circle>
-        <StyledP>PRESTASHOP | IDENTITY | BRANDING</StyledP>
-      </Container>
-    </StyledSection>
-  );
-};
+const StyledDots = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  span {
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 3px;
+    &.active {
+      background-color: #000;
+    }
+  }
+`;
+
+class AboutMeView extends Component {
+  state = {};
+
+  render() {
+    return (
+      <StyledSection>
+        <ReactPageScroller
+          ref={c => {
+            return this.reactPageScroller === c;
+          }}
+        >
+          <Container>
+            <ContainerPhotoNumber>
+              <Image />
+              <p>01</p>
+            </ContainerPhotoNumber>
+            <StyledText>COMNET</StyledText>
+            <StyledText className="front">COMNET</StyledText>
+            <Circle>
+              <a href="http://com-net.com.pl">
+                <FontAwesomeIcon icon={faInfo} />
+              </a>
+            </Circle>
+            <Circle className="second">
+              <a href="http://com-net.com.pl">
+                <FontAwesomeIcon icon={faCode} />
+              </a>
+            </Circle>
+            <StyledP>ANIMATIONS | REACT | STYLED COMPONENTS</StyledP>
+            <StyledDots>
+              <span className="active" />
+              <span />
+              <span />
+              <span />
+            </StyledDots>
+          </Container>
+          <Container>
+            <ContainerPhotoNumber>
+              <Image two={`url(${conventer})`} />
+              <p>02</p>
+            </ContainerPhotoNumber>
+            <StyledText topSecond="35%" rightSecond="20%">
+              CONVENTER
+            </StyledText>
+            <StyledText topSecond="35%" rightSecond="20%" className="front">
+              CONVENTER
+            </StyledText>
+            <Circle>
+              <a href="http://com-net.com.pl">
+                <FontAwesomeIcon icon={faInfo} />
+              </a>
+            </Circle>
+            <Circle className="second">
+              <a href="https://github.com/marceleq27/CurrencyConverter">
+                <FontAwesomeIcon icon={faCode} />
+              </a>
+            </Circle>
+            <StyledP>SCSS | REACT | STYLED COMPONENTS | API</StyledP>
+            <StyledDots>
+              <span />
+              <span className="active" />
+              <span />
+              <span />
+            </StyledDots>
+          </Container>
+          <Container>
+            <ContainerPhotoNumber>
+              <Image three={`url(${weather})`} />
+              <p>03</p>
+            </ContainerPhotoNumber>
+            <StyledText rightSecond="35%">WEATHER</StyledText>
+            <StyledText rightSecond="35%" className="front">
+              WEATHER
+            </StyledText>
+            <Circle>
+              <a href="http://">
+                <FontAwesomeIcon icon={faInfo} />
+              </a>
+            </Circle>
+            <Circle className="second">
+              <a href="https://github.com/marceleq27/DzierzoniowWeatherApp">
+                <FontAwesomeIcon icon={faCode} />
+              </a>
+            </Circle>
+            <StyledP>API | REACT | STYLED COMPONENTS</StyledP>
+            <StyledDots>
+              <span />
+              <span />
+              <span className="active" />
+              <span />
+            </StyledDots>
+          </Container>
+          <Container>
+            <ContainerPhotoNumber>
+              <Image four={`url(${grawernia})`} />
+              <p>04</p>
+            </ContainerPhotoNumber>
+            <StyledText topSecond="35%" rightSecond="20%">
+              GRAWERNIA
+            </StyledText>
+            <StyledText topSecond="35%" rightSecond="20%" className="front">
+              GRAWERNIA
+            </StyledText>
+            <Circle>
+              <a href="http://com-net.com.pl">
+                <FontAwesomeIcon icon={faInfo} />
+              </a>
+            </Circle>
+            <Circle className="second">
+              <a href="https://grawerniaddz.pl">
+                <FontAwesomeIcon icon={faCode} />
+              </a>
+            </Circle>
+            <StyledP>PRESTASHOP | IDENTITY | BRANDING</StyledP>
+            <StyledDots>
+              <span />
+              <span />
+              <span />
+              <span className="active" />
+            </StyledDots>
+          </Container>
+        </ReactPageScroller>
+      </StyledSection>
+    );
+  }
+}
 
 export default AboutMeView;
