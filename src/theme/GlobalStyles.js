@@ -13,7 +13,6 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-family: 'Josefin Sans', sans-serif;
-        height:1000vh;
     }
 `;
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import '../../utils/hamburgers.css';
+import '../../theme/hamburgers.css';
 
 const StyledHamburger = styled.button`
   position: fixed;

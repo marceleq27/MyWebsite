@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: center;
   padding: 15px 15px;
-  /* display: inline-block; */
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
@@ -18,12 +17,15 @@
   font: inherit;
   color: inherit;
   text-transform: none;
-  background-color: transparent;
+  background-color: #fff;
+  border-radius: 15px;
   border: 0;
   margin: 15px 15px 0 0;
   overflow: visible;
 }
-
+.is-active {
+  background-color: #000;
+}
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {

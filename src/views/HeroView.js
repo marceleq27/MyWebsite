@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import zdj2 from '../utils/zdj2.jpeg';
-import Hamburger from '../components/Hamburger/Hamburger';
 import logo from '../utils/Logo4.png';
 
 const animation = keyframes`
@@ -26,7 +25,7 @@ const StyledSection = styled.section`
     font-weight: 700;
     position: absolute;
     font-size: 45px;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
@@ -38,7 +37,7 @@ const StyledSection = styled.section`
 const StyledImage = styled.img`
   opacity: 0.9;
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: 0;
   transform: translate(0, -50%);
   max-width: 80%;
@@ -51,7 +50,7 @@ const Number = styled.p`
   font-weight: 700;
   position: absolute;
   font-size: 100px;
-  top: 80%;
+  top: 75%;
   left: 20%;
   transform: translate(-50%, -50%);
   z-index: 5;
@@ -69,7 +68,7 @@ const StyledButton = styled.button`
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 2px;
   font-weight: 300;
-  top: 85%;
+  bottom: 8%;
   right: 5%;
   text-align: right;
   transition: 0.2s;
@@ -123,7 +122,6 @@ const HeroView = () => {
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="fdfsfs" />
-      <Hamburger />
       <StyledImage src={zdj2} alt="sddfsfsdadfdsfada" />
       <h1>Hi, I&apos;m Marcel.</h1>
       <Number>01</Number>

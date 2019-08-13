@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import Hamburger from '../components/Hamburger/Hamburger';
 
@@ -64,7 +65,7 @@ const StyledNavigation = styled.nav`
 
 const StyledDiv = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   left: 0;
   display: flex;
   align-items: center;
@@ -116,6 +117,8 @@ class NavigationView extends Component {
     hamburger.classList.toggle('is-active');
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
   };
 
   render() {
@@ -125,24 +128,24 @@ class NavigationView extends Component {
         <StyledNavigation>
           <ul>
             <li>
-              <a href="#section1" onClick={this.handleActiveState}>
+              <NavLink to="/" href="#section1" onClick={this.handleActiveState}>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#section2" onClick={this.handleActiveState}>
+              <NavLink to="/about" href="#section2" onClick={this.handleActiveState}>
                 About me
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#section3" onClick={this.handleActiveState}>
+              <NavLink to="/" href="#section3" onClick={this.handleActiveState}>
                 Portfolio
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#section4" onClick={this.handleActiveState}>
+              <NavLink to="/" href="#section4" onClick={this.handleActiveState}>
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
           <StyledDiv className="socials">
