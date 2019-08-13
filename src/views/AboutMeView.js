@@ -87,7 +87,7 @@ const StyledText = styled.p`
 `;
 const Circle = styled.div`
   position: absolute;
-  bottom: 5%;
+  bottom: 6%;
   right: 5%;
   width: 50px;
   height: 50px;
@@ -138,7 +138,7 @@ const StyledDots = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 5%;
+  bottom: 6%;
   left: 5%;
   span {
     width: 5px;
