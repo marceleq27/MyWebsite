@@ -6,7 +6,7 @@ const StyledHamburger = styled.button`
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 21;
 `;
 
 class Hamburger extends Component {

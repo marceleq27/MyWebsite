@@ -44,7 +44,7 @@ const Container = styled.div`
     justify-content: center;
     top: 0;
     left: 0;
-    z-index: 20;
+    z-index: 25;
     transition: 0.3s;
     background-color: #333;
     transform: translateX(100%);
@@ -64,7 +64,6 @@ const Container = styled.div`
     }
     &.activeInfo {
       opacity: 1;
-      z-index: 5;
       transform: translateX(0);
     }
   }
@@ -200,7 +199,7 @@ const CircleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 551;
+
   svg {
     color: #000;
     font-size: 20px;
@@ -233,7 +232,10 @@ class AboutMeView extends Component {
           </ContainerPhotoNumber>
           <StyledText>COMNET</StyledText>
           <StyledText className="front">COMNET</StyledText>
-          <CircleButton onClick={this.handleActiveInfo}>
+          <CircleButton
+            onClick={this.handleActiveInfo}
+            style={{ zIndex: activeButton ? '26' : '1' }}
+          >
             <FontAwesomeIcon icon={activeButton ? faTimes : faInfo} />
           </CircleButton>
           <div className="info">
