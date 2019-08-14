@@ -8,6 +8,8 @@ import comnet from '../utils/comnet1.png';
 import conventer from '../utils/conventer.png';
 import weather from '../utils/weather.png';
 import grawernia from '../utils/grawernia.png';
+import LoadingScreen from './LoadingScreenView';
+import PortfolioComponent from '../components/PortfolioComponent/PortfolioComponent';
 
 const rotate = keyframes`
 from{
@@ -31,7 +33,10 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  &:nth-of-type(4) {
+    margin-bottom: 0;
+  }
   .info {
     color: #fff;
     height: 100vh;
@@ -44,11 +49,15 @@ const Container = styled.div`
     justify-content: center;
     top: 0;
     left: 0;
-    z-index: 25;
     transition: 0.3s;
     background-color: #333;
     transform: translateX(100%);
+    display: block;
     h1 {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      transform: translateY(-50%);
       margin: 20px 20px 0;
       font-size: 45px;
       letter-spacing: 1px;
@@ -56,6 +65,10 @@ const Container = styled.div`
       font-family: 'Josefin Sans', sans-serif;
     }
     p {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
       margin: 20px;
       font-size: 25px;
       line-height: 120%;
@@ -63,7 +76,7 @@ const Container = styled.div`
       font-family: 'Josefin Sans', sans-serif;
     }
     &.activeInfo {
-      opacity: 1;
+      z-index: 5;
       transform: translateX(0);
     }
   }
@@ -210,7 +223,14 @@ const CircleButton = styled.button`
 class AboutMeView extends Component {
   state = {
     activeButton: false,
+    isLoaded: false,
   };
+
+  componentDidMount() {
+    this.setState(prevState => ({
+      isLoaded: !prevState.isLoaded,
+    }));
+  }
 
   handleActiveInfo = () => {
     const button = document.querySelector('.info');
@@ -222,10 +242,22 @@ class AboutMeView extends Component {
   };
 
   render() {
-    const { activeButton } = this.state;
+    const { activeButton, isLoaded } = this.state;
     return (
       <StyledSection>
-        <Container>
+        {isLoaded ? '' : <LoadingScreen />}
+        <PortfolioComponent
+          project="Comnet"
+          number="01"
+          aboutProject="lorem ipsum dolor sit amet"
+          top="25%"
+          right="40%"
+          link="http://www.com-net.com.pl/"
+          imageUrl={`url(${comnet})`}
+          technologies="ANIMATIONS | REACT | STYLED COMPONENTS"
+          isActive1="active"
+        />
+        {/* <Container>
           <ContainerPhotoNumber>
             <Image />
             <p>01</p>
@@ -258,7 +290,7 @@ class AboutMeView extends Component {
             <span />
             <span />
           </StyledDots>
-        </Container>
+        </Container> */}
         <Container>
           <ScrollAnimation animateIn="rotateInUpLeft" animateOnce>
             <ContainerPhotoNumber>

@@ -17,8 +17,6 @@ class Hamburger extends Component {
     hamburger.classList.toggle('is-active');
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
-    // const menu = document.querySelector('.menu');
-    // menu.classList.toggle('active');
     this.setState(prevState => ({
       isClicked: !prevState.isClicked,
     }));
