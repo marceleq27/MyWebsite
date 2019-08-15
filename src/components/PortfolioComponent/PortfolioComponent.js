@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfo, faCode, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const rotate = keyframes`
 from{
@@ -21,38 +22,41 @@ const Container = styled.div`
   &:nth-of-type(4) {
     margin-bottom: 0;
   }
-  .info {
+  .info01,
+  .info02,
+  .info03,
+  .info04 {
     color: #fff;
     height: 100vh;
-    width: 100vw;
+    width: 75vw;
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    text-align: left;
-    justify-content: center;
     top: 0;
     left: 0;
     transition: 0.3s;
     background-color: #333;
-    transform: translateX(100%);
     display: block;
+    z-index: 50;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     h1 {
-      position: absolute;
+      /* position: absolute;
       top: 15%;
       left: 0;
-      transform: translateY(-50%);
+      transform: translateY(-50%); */
       margin: 20px 20px 0;
-      font-size: 45px;
+      font-size: 35px;
       letter-spacing: 1px;
       font-weight: 700;
       font-family: 'Josefin Sans', sans-serif;
     }
     p {
-      position: absolute;
+      /* position: absolute;
       top: 50%;
       left: 0;
-      transform: translateY(-50%);
+      transform: translateY(-50%); */
       margin: 20px;
       font-size: 25px;
       line-height: 120%;
@@ -60,8 +64,7 @@ const Container = styled.div`
       font-family: 'Josefin Sans', sans-serif;
     }
     &.activeInfo {
-      z-index: 5;
-      transform: translateX(0);
+      opacity: 1;
     }
   }
 `;
@@ -186,21 +189,28 @@ const CircleButton = styled.button`
   border: none;
   position: absolute;
   bottom: 6%;
-  right: 5%;
+  right: 6%;
   width: 50px;
   height: 50px;
   background-color: #fff;
   border-radius: 50%;
-  z-index: 10;
   transition: 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    font-size: 16px;
+    animation: ${rotate} 4s linear infinite;
+  }
   svg {
     color: #000;
     font-size: 20px;
     animation: ${rotate} 4s linear infinite;
+    overflow: hidden;
   }
 `;
 
@@ -209,13 +219,31 @@ class PortfolioComponent extends Component {
     activeButton: false,
   };
 
-  handleActiveInfo = () => {
-    const button = document.querySelector('.info');
-    button.classList.toggle('activeInfo');
-    document.body.classList.toggle('noscroll');
+  handleActiveInfo = e => {
+    const info1 = document.querySelector('.info01');
+    const info2 = document.querySelector('.info02');
+    const info3 = document.querySelector('.info03');
+    const info4 = document.querySelector('.info04');
     this.setState(prevState => ({
       activeButton: !prevState.activeButton,
     }));
+
+    switch (e.target.classList[0] || e.currentTarget.classList[0]) {
+      case 'button01':
+        info1.classList.toggle('activeInfo');
+        break;
+      case 'button02':
+        info2.classList.toggle('activeInfo');
+        break;
+      case 'button03':
+        info3.classList.toggle('activeInfo');
+        break;
+      case 'button04':
+        info4.classList.toggle('activeInfo');
+        break;
+      default:
+        console.log('problem');
+    }
   };
 
   render() {
@@ -236,20 +264,26 @@ class PortfolioComponent extends Component {
     } = this.props;
     return (
       <Container>
-        <ContainerPhotoNumber>
-          <Image image={imageUrl} />
-          <p>{number}</p>
-        </ContainerPhotoNumber>
+        <ScrollAnimation animateIn="rotateInUpLeft" animateOnce>
+          <ContainerPhotoNumber>
+            <Image image={imageUrl} />
+            <p>{number}</p>
+          </ContainerPhotoNumber>
+        </ScrollAnimation>
         <StyledText top={top} right={right}>
           {project}
         </StyledText>
         <StyledText className="front" top={top} right={right}>
           {project}
         </StyledText>
-        <CircleButton onClick={this.handleActiveInfo} style={{ zIndex: activeButton ? '26' : '1' }}>
-          <FontAwesomeIcon icon={activeButton ? faTimes : faInfo} />
+        <CircleButton
+          onClick={this.handleActiveInfo}
+          style={{ zIndex: activeButton ? '26' : '1' }}
+          className={`button${number}`}
+        >
+          <p>{activeButton ? 'X' : 'Info'}</p>
         </CircleButton>
-        <div className="info">
+        <div className={`info${number}`}>
           <h1>{project}</h1>
           <p>{aboutProject}</p>
         </div>

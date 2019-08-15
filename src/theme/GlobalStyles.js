@@ -17,6 +17,9 @@ const GlobalStyles = createGlobalStyle`
             position:fixed;
             overflow:hidden;
         }
+        &.noscroll .hamburger{
+           z-index: -1;
+        }
     }
 `;
 
