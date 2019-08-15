@@ -9,6 +9,7 @@ import LoadingScreen from './LoadingScreenView';
 import PortfolioComponent from '../components/PortfolioComponent/PortfolioComponent';
 
 const StyledSection = styled.section`
+  overflow-x: hidden;
   background-color: #1c1c1c;
   position: relative;
   display: flex;
@@ -36,7 +37,9 @@ class AboutMeView extends Component {
         <PortfolioComponent
           project="COMNET"
           number="01"
-          aboutProject="lorem ipsum dolor sit amet"
+          aboutProject="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est obcaecati, quasi veniam
+          unde asperiores, fuga fugit esse cupiditate, minima nam ratione ipsam? Optio tenetur
+          voluptates quidem odio quis earum illo."
           top="25%"
           right="40%"
           link="http://www.com-net.com.pl/"

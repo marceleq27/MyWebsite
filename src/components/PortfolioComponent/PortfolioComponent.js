@@ -35,28 +35,20 @@ const Container = styled.div`
     transition: 0.3s;
     background-color: #333;
     display: block;
-    z-index: 50;
-    opacity: 1;
+    z-index: 16;
+    opacity: 0;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     flex-direction: column;
     h1 {
-      /* position: absolute;
-      top: 15%;
-      left: 0;
-      transform: translateY(-50%); */
-      margin: 20px 20px 0;
+      margin: 20px;
       font-size: 35px;
       letter-spacing: 1px;
       font-weight: 700;
       font-family: 'Josefin Sans', sans-serif;
     }
     p {
-      /* position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%); */
       margin: 20px;
       font-size: 25px;
       line-height: 120%;
@@ -77,7 +69,6 @@ const ContainerPhotoNumber = styled.div`
   justify-content: center;
   align-items: center;
   width: 70vw;
-
   p {
     font-size: 120px;
     font-weight: 900;
@@ -224,6 +215,8 @@ class PortfolioComponent extends Component {
     const info2 = document.querySelector('.info02');
     const info3 = document.querySelector('.info03');
     const info4 = document.querySelector('.info04');
+    const button = document.querySelector('.hamburger');
+    document.body.classList.toggle('noscroll');
     this.setState(prevState => ({
       activeButton: !prevState.activeButton,
     }));
@@ -231,6 +224,7 @@ class PortfolioComponent extends Component {
     switch (e.target.classList[0] || e.currentTarget.classList[0]) {
       case 'button01':
         info1.classList.toggle('activeInfo');
+        button.classList.toggle('noview');
         break;
       case 'button02':
         info2.classList.toggle('activeInfo');
@@ -264,7 +258,7 @@ class PortfolioComponent extends Component {
     } = this.props;
     return (
       <Container>
-        <ScrollAnimation animateIn="rotateInUpLeft" animateOnce>
+        <ScrollAnimation animateIn="fadeInLeft" animateOnce>
           <ContainerPhotoNumber>
             <Image image={imageUrl} />
             <p>{number}</p>

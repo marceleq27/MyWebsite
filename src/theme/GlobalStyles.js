@@ -14,12 +14,12 @@ const GlobalStyles = createGlobalStyle`
     body{
         font-family: 'Josefin Sans', sans-serif;
         &.noscroll{
-            position:fixed;
+            height:100%;
             overflow:hidden;
         }
-        &.noscroll .hamburger{
-           z-index: -1;
-        }
+    }
+    .noview{
+        opacity:0;
     }
 `;
 

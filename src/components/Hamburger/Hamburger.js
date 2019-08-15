@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../../theme/hamburgers.css';
+import PropTypes from 'prop-types';
 
 const StyledHamburger = styled.button`
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  z-index: 21;
+  z-index: 19;
+  transition: 0.3s;
 `;
 
 class Hamburger extends Component {
   state = {};
 
-  handleClick = () => {
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.classList.toggle('is-active');
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-    this.setState(prevState => ({
-      isClicked: !prevState.isClicked,
-    }));
-  };
-
   render() {
+    const { clickFunc } = this.props;
     return (
       <StyledHamburger
         className="hamburger hamburger--spring"
         type="button"
-        onClick={this.handleClick}
+        onClick={() => clickFunc(this)}
       >
         <span className="hamburger-box">
           <span className="hamburger-inner" />
@@ -36,5 +29,7 @@ class Hamburger extends Component {
     );
   }
 }
-
+Hamburger.propTypes = {
+  clickFunc: PropTypes.func.isRequired,
+};
 export default Hamburger;

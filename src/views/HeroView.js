@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.jpeg';
 import logo from '../utils/Logo4.png';
 
@@ -127,6 +128,7 @@ const HeroView = () => {
       <Number>00</Number>
       <StyledButton>Look at my projects</StyledButton>
       <StyledP>I want to be a junior frontend developer!</StyledP>
+      <CanvasDots />
     </StyledSection>
   );
 };

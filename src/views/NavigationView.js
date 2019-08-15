@@ -22,7 +22,7 @@ const StyledNavigation = styled.nav`
   background-color: #000;
   &.active {
     opacity: 1;
-    z-index: 20;
+    z-index: 18;
   }
   &.active li {
     animation: ${animateOpacity} 0.3s 0.2s linear both;
@@ -122,7 +122,7 @@ class NavigationView extends Component {
   render() {
     return (
       <>
-        <Hamburger />
+        <Hamburger clickFunc={() => this.handleActiveState(this)} />
         <StyledNavigation>
           <ul>
             <li>
@@ -131,12 +131,12 @@ class NavigationView extends Component {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" href="#section2" onClick={this.handleActiveState}>
+              <NavLink to="/" href="#section2" onClick={this.handleActiveState}>
                 About me
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" href="#section3" onClick={this.handleActiveState}>
+              <NavLink to="/about" href="#section3" onClick={this.handleActiveState}>
                 Portfolio
               </NavLink>
             </li>

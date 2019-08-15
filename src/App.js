@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import CanvasDots from 'components/CanvasDots/CanvasDots';
 import GlobalStyles from './theme/GlobalStyles';
 import LoadingScreenView from './views/LoadingScreenView';
 import HeroView from './views/HeroView';
@@ -30,7 +29,6 @@ class App extends Component {
             </TransitionGroup>
           )}
         />
-        <CanvasDots />
       </Router>
     );
   }
