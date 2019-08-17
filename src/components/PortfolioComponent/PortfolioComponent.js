@@ -236,7 +236,9 @@ class PortfolioComponent extends Component {
         info4.classList.toggle('activeInfo');
         break;
       default:
-        console.log('problem');
+        this.setState(prevState => ({
+          activeButton: !prevState.activeButton,
+        }));
     }
   };
 

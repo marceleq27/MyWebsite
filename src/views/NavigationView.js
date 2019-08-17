@@ -131,7 +131,7 @@ class NavigationView extends Component {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" href="#section2" onClick={this.handleActiveState}>
+              <NavLink to="/information" href="#section2" onClick={this.handleActiveState}>
                 About me
               </NavLink>
             </li>

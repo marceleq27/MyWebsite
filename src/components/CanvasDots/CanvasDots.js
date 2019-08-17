@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledCanvas = styled.canvas`
-  position: fixed;
-  z-index: -1;
+  position: ${props => props.position};
+  z-index: ${props => props.index};
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -107,12 +108,10 @@ class CanvasDots extends Component {
         context.closePath();
       };
     }
-
     // Implementation
     const particles = [];
     function init() {
       // how many dots,center and size
-
       for (let i = 0; i < 3; i++) {
         particles.push(new Dot(canvas.width / 2, canvas.height / 2, 5, '#000'));
       }
@@ -139,8 +138,27 @@ class CanvasDots extends Component {
   }
 
   render() {
-    return <StyledCanvas ref={this.canvasRef} />;
+    const { position, index, countParticles } = this.props;
+    return (
+      <StyledCanvas
+        ref={this.canvasRef}
+        position={position}
+        index={index}
+        countParticles={countParticles}
+      />
+    );
   }
 }
 
+CanvasDots.propTypes = {
+  position: PropTypes.string,
+  index: PropTypes.string,
+  countParticles: PropTypes.number,
+};
+
+CanvasDots.defaultProps = {
+  position: 'fixed',
+  index: '-1',
+  countParticles: 5,
+};
 export default CanvasDots;
