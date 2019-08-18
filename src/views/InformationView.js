@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const StyledSection = styled.section`
   background-color: #1c1c1c;
@@ -52,6 +53,50 @@ const Container = styled.div`
   }
 `;
 
+const StyledA = styled.a`
+  height: 100vh;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0;
+    &:hover {
+      &::after {
+        height: 500px;
+        z-index: -1;
+        opacity: 1;
+      }
+    }
+    &::after {
+      content: 'Dobra decyzja';
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 200px;
+      position: absolute;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: 0.3s;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+`;
+
 const InformationView = () => {
   return (
     <StyledSection>
@@ -83,6 +128,14 @@ const InformationView = () => {
           </p>
         </Container>
         <Container>
+          <h2>Perfekcjonizm</h2>
+          <p>
+            dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam consectetur
+            tempora voluptates amet minima quidem ullam, beatae dicta aperiam dolor voluptate
+            molestiae iusto. Praesentium, autem eaque!
+          </p>
+        </Container>
+        <Container>
           <h2>Niemożliwe?</h2>
           <p>
             Nie istnieje. dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam
@@ -91,6 +144,11 @@ const InformationView = () => {
           </p>
         </Container>
       </StyledDiv>
+      <ScrollAnimation animateOnce animateIn="fadeInUp">
+        <StyledA href="#">
+          <h1>Kontakt</h1>
+        </StyledA>
+      </ScrollAnimation>
     </StyledSection>
   );
 };
