@@ -8,6 +8,7 @@ import HeroView from './views/HeroView';
 import NavigationView from './views/NavigationView';
 import AboutMeView from './views/AboutMeView';
 import InformationView from './views/InformationView';
+import ContactView from './views/ContactView';
 
 class App extends Component {
   state = {};
@@ -26,6 +27,7 @@ class App extends Component {
                   <Route exact path="/" component={HeroView} />
                   <Route exact path="/information" component={InformationView} />
                   <Route exact path="/about" component={AboutMeView} />
+                  <Route exact path="/contact" component={ContactView} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
