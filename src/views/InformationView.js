@@ -104,43 +104,49 @@ const InformationView = () => {
         <h1>Cześć, poznajmy się lepiej.</h1>
         {/* <img src="" alt="" srcset=""/> */}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cupiditate, doloremque quidem
-          tempora ratione autem unde eaque cum, corrupti explicabo commodi magnam minus aliquid
-          iure? Dolorem animi, ex sed eum voluptates tempora aperiam labore quas architecto, earum
-          culpa
+          Jestem Marcel, od ponad roku zajmuję się programowaniem na front endzie. Swoja pasję
+          docelowo chciałbym zamienić w codzienną pracę. Jeśli chciałbyś podjąć współpracę ,bądź
+          zaoferować coś ciekawego, napisz lub zadzwoń śmiało.
         </p>
       </StyledDiv>
       <StyledDiv>
         <Container>
           <h2>Tylko Praktyka</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam
-            consectetur tempora voluptates amet minima quidem ullam, beatae dicta aperiam dolor
-            voluptate molestiae iusto. Praesentium, autem eaque!
+            Przerobiłem mnóstwo kursów. Ale czym byłaby wiedza bez swojego poparcia w kodzie?
+            Dlatego też staram się pobudzać swoją ciekawość i pisać coraz to lepsze projekty. Dobrze
+            by było, abyś je zobaczył/a.
+          </p>
+        </Container>
+        <Container>
+          <h2>Ciekawość</h2>
+          <p>
+            Podstawa pracy programisty. Bez tego nie byłoby mnie tutaj.Jestem tego pewien. Uwielbiam
+            próbować nowych rzeczy w kodzie, często błądzę, ale czy bez tego było by fajnie?
           </p>
         </Container>
         <Container>
           <h2>Zaangażowanie</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam
-            consectetur tempora voluptates amet minima quidem ullam, beatae dicta aperiam dolor
-            voluptate molestiae iusto. Praesentium, autem eaque!
+            Oraz współpraca. Kluczowe cechy. Przy tworzeniu projektów komercyjnych nadal się uczę,
+            ale one pozwalają mi na uzyskanie coraz to lepszej efektywności. A to wszystko ponieważ
+            daję z siebie zawsze 100%.
           </p>
         </Container>
         <Container>
           <h2>Perfekcjonizm</h2>
           <p>
-            dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam consectetur
-            tempora voluptates amet minima quidem ullam, beatae dicta aperiam dolor voluptate
-            molestiae iusto. Praesentium, autem eaque!
+            Regularna praca z grafikiem to nie lada wyzwanie. Zawsze &quot;pixel perfect&quot;. Tego
+            się nauczyłem i to chcę kontynuować. Do tego dochodzi czystość w kodzie i mamy definicję
+            nagłówka.
           </p>
         </Container>
         <Container>
           <h2>Niemożliwe?</h2>
           <p>
-            Nie istnieje. dolor, sit amet consectetur adipisicing elit. Unde maxime a ipsum totam
-            consectetur tempora voluptates amet minima quidem ullam, beatae dicta aperiam dolor
-            voluptate molestiae iusto. Praesentium, autem eaque!
+            Nie istnieje. Jeśli mam okazję, zawsze spróbuję. A jeśli nie wyjdzie - będę próbował, aż
+            w końcu zadziała. Wynika to niestety z mojej ciekawości i chęci rozwoju. Czy taka
+            zachłanność jest dobra? Nie wiem, póki co się świetnie sprawdza.
           </p>
         </Container>
       </StyledDiv>
