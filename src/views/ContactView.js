@@ -145,7 +145,7 @@ const StyledDiv = styled.div`
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 20px;
+    padding: 15px;
     svg {
       font-size: 30px;
     }
@@ -185,12 +185,16 @@ class ContactView extends Component {
           <h2>MB</h2>
         </StyledSection>
         <StyledFooter>
-          <StyledButton type="button" onClick={this.handleEmail}>
-            <FontAwesomeIcon icon={faEnvelope} />
-          </StyledButton>
-          <StyledButton type="button" onClick={this.handlePhone}>
-            <FontAwesomeIcon icon={faPhone} />
-          </StyledButton>
+          <a href="mailto:marcel.bednarz16@gmail.com">
+            <StyledButton type="button" onClick={this.handleEmail}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </StyledButton>
+          </a>
+          <a href="tel:696-533-998">
+            <StyledButton type="button" onClick={this.handlePhone}>
+              <FontAwesomeIcon icon={faPhone} />
+            </StyledButton>
+          </a>
           <StyledDiv className="mail">
             <p>marcel.bednarz16@gmail.com</p>
             <button type="button" className="close" onClick={this.handleEmail}>
