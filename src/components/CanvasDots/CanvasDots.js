@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 const StyledCanvas = styled.canvas`
   position: ${props => props.position};
   z-index: ${props => props.index};
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   background-color: transparent;
 `;
 
@@ -37,7 +36,7 @@ class CanvasDots extends Component {
       this.color = color;
       this.radians = Math.random() * Math.PI * 2;
       this.velocity = 0.01;
-      this.distanceFromCenter = randomIntFromRange(180, 300);
+      this.distanceFromCenter = randomIntFromRange(250, 300);
 
       this.update = () => {
         this.radians += this.velocity;

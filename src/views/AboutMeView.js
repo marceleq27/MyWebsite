@@ -38,8 +38,6 @@ class AboutMeView extends Component {
           project="COMNET"
           number="01"
           aboutProject="Pierwszy komercyjny projekt strony-wizytówki z użyciem CRA. We współpracy z grafikiem podjęliśmy się stworzenia projektu od zera. Z pomocą przyszły również takie technologie jak React Router oraz biblioteki odpowiadające za animacje."
-          top="25%"
-          right="40%"
           link="http://www.com-net.com.pl/"
           imageUrl={`url(${comnet})`}
           technologies="ANIMATIONS | REACT | STYLED COMPONENTS"
@@ -49,8 +47,6 @@ class AboutMeView extends Component {
           project="CONVENTER"
           number="02"
           aboutProject="Aplikacja stworzona w celu nauki korzystania z API ,ale sprawdza się również w praktycznym użyciu. Dobrze sprawdziła się tu składnia SCSS, która znacznie ułatwiła pisanie kodu."
-          top="35%"
-          right="20%"
           link="https://github.com/marceleq27/CurrencyConverter"
           imageUrl={`url(${conventer})`}
           technologies="SCSS | REACT | JAVASCRIPT | API"
@@ -60,8 +56,6 @@ class AboutMeView extends Component {
           project="WEATHER"
           number="03"
           aboutProject="Prosta aplikacja pogodowa, umożliwia wpisanie danego miasta i sprawdzenie aktualnej pogody. GIFy pochodzą z zewnętrznego źródła na które dostałem pozwolenie. Do ostylowania świetnie sprawdziła się paczka styled components."
-          top="25%"
-          right="32%"
           link="https://github.com/marceleq27/DzierzoniowWeatherApp"
           imageUrl={`url(${weather})`}
           technologies="API | REACT | STYLED COMPONENTS"
@@ -71,8 +65,6 @@ class AboutMeView extends Component {
           project="GRAWERNIA"
           number="04"
           aboutProject="Sklep utworzony na zlecenie klienta, powstał we współpracy ze znajomym grafikiem. Była to moja pierwsza stycznośc z tego typu systemami, natomiast szybka nauka pozwoliła na sprawne postawienie sklepu."
-          top="35%"
-          right="19%"
           link="https://grawerniaddz.pl"
           imageUrl={`url(${grawernia})`}
           technologies="PRESTASHOP | IDENTITY | BRANDING"

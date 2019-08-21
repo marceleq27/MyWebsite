@@ -78,6 +78,9 @@ const ContainerPhotoNumber = styled.div`
     top: 12%;
     transform: translateY(-10%);
     right: 0;
+    @media (min-width: 768px) {
+      font-size: 180px;
+    }
   }
 `;
 
@@ -94,6 +97,10 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-attachment: scroll;
   z-index: 2;
+  @media (min-width: 768px) {
+    width: 70%;
+    top: 5%;
+  }
 `;
 
 const StyledText = styled.p`
@@ -122,6 +129,10 @@ const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
   &:hover {
     background-color: #fff;
   }
@@ -138,6 +149,9 @@ const Circle = styled.div`
       color: #000;
       font-size: 20px;
       animation: ${rotate} 4s linear infinite;
+      @media (min-width: 768px) {
+        font-size: 25px;
+      }
     }
   }
   &.second {
@@ -156,6 +170,10 @@ const StyledP = styled.p`
   transform: rotate(90deg);
   letter-spacing: 2px;
   z-index: 5;
+  @media (min-width: 768px) {
+    left: 40%;
+    font-size: 18px;
+  }
 `;
 
 const StyledDots = styled.div`
@@ -191,6 +209,10 @@ const CircleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
   p {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 900;
@@ -198,12 +220,9 @@ const CircleButton = styled.button`
     margin: 0 auto;
     font-size: 16px;
     animation: ${rotate} 4s linear infinite;
-  }
-  svg {
-    color: #000;
-    font-size: 20px;
-    animation: ${rotate} 4s linear infinite;
-    overflow: hidden;
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -257,8 +276,6 @@ class PortfolioComponent extends Component {
       isActive3,
       isActive4,
       imageUrl,
-      top,
-      right,
     } = this.props;
     return (
       <Container>
@@ -268,9 +285,7 @@ class PortfolioComponent extends Component {
             <p>{number}</p>
           </ContainerPhotoNumber>
         </ScrollAnimation>
-        <StyledText top={top} right={right}>
-          {project}
-        </StyledText>
+        <StyledText>{project}</StyledText>
         <CircleButton
           onClick={this.handleActiveInfo}
           style={{ zIndex: activeButton ? '26' : '1' }}
@@ -303,8 +318,6 @@ PortfolioComponent.propTypes = {
   project: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   aboutProject: PropTypes.string.isRequired,
-  top: PropTypes.string.isRequired,
-  right: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   technologies: PropTypes.string.isRequired,

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import ScrollAnimation from 'react-animate-on-scroll';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.jpeg';
 import logo from '../utils/Logo4.png';
@@ -33,6 +34,10 @@ const StyledSection = styled.section`
     padding: 10px 0;
     z-index: 15;
     width: 100%;
+    @media (min-width: 768px) {
+      font-size: 70px;
+      padding: 13px 0;
+    }
   }
 `;
 const StyledImage = styled.img`
@@ -40,11 +45,15 @@ const StyledImage = styled.img`
   position: absolute;
   top: 45%;
   right: 0;
-  transform: translate(0, -50%);
+  transform: translate(0, 25%);
   max-width: 80%;
   height: auto;
   z-index: 10;
   display: block;
+  @media (min-width: 768px) {
+    max-width: 60%;
+    opacity: 1;
+  }
 `;
 const Number = styled.p`
   font-family: 'Josefin Sans', sans-serif;
@@ -58,13 +67,15 @@ const Number = styled.p`
   color: transparent;
   -webkit-text-stroke: 2px #000;
   width: 100%;
+  @media (min-width: 768px) {
+    font-size: 130px;
+  }
 `;
 const StyledButton = styled.button`
   padding: 20px;
   background-color: #000;
   position: absolute;
   border: none;
-
   font-size: 15px;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 2px;
@@ -76,6 +87,10 @@ const StyledButton = styled.button`
   z-index: 5;
   overflow: hidden;
   cursor: pointer;
+  @media (min-width: 768px) {
+    font-size: 25px;
+    padding: 25px;
+  }
   a {
     text-decoration: none;
     color: #fff;
@@ -121,13 +136,18 @@ const StyledLogo = styled.img`
   max-width: 50%;
   height: 54px;
   margin: 15px 0 0 30px;
+  @media (min-width: 768px) {
+    height: 70px;
+  }
 `;
 
 const HeroView = () => {
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
-      <StyledImage src={zdj2} alt="me" />
+      <ScrollAnimation animateOnce animateIn="fadeInRight" offset={0}>
+        <StyledImage src={zdj2} alt="me" />
+      </ScrollAnimation>
       <h1>Hi, I&apos;m Marcel.</h1>
       <Number>00</Number>
       <StyledButton>
