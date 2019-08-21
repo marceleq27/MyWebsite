@@ -64,19 +64,23 @@ const StyledButton = styled.button`
   background-color: #000;
   position: absolute;
   border: none;
-  color: #fff;
+
   font-size: 15px;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 2px;
   font-weight: 300;
-  bottom: 10%;
+  bottom: 13%;
   right: 5%;
   text-align: right;
   transition: 0.2s;
   z-index: 5;
   overflow: hidden;
   cursor: pointer;
-  &:hover {
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover a {
     color: #000;
   }
   &::after {
@@ -122,11 +126,13 @@ const StyledLogo = styled.img`
 const HeroView = () => {
   return (
     <StyledSection>
-      <StyledLogo src={logo} alt="fdfsfs" />
-      <StyledImage src={zdj2} alt="sddfsfsdadfdsfada" />
+      <StyledLogo src={logo} alt="logo" />
+      <StyledImage src={zdj2} alt="me" />
       <h1>Hi, I&apos;m Marcel.</h1>
       <Number>00</Number>
-      <StyledButton>Look at my projects</StyledButton>
+      <StyledButton>
+        <a href="/about">Look at my projects</a>
+      </StyledButton>
       <StyledP>I want to be a junior frontend developer!</StyledP>
       <CanvasDots />
     </StyledSection>

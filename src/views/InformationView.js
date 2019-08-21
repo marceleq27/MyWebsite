@@ -145,7 +145,7 @@ const InformationView = () => {
         </Container>
       </StyledDiv>
       <ScrollAnimation animateOnce animateIn="fadeInUp">
-        <StyledA href="#">
+        <StyledA href="/contact">
           <h1>Kontakt</h1>
         </StyledA>
       </ScrollAnimation>
