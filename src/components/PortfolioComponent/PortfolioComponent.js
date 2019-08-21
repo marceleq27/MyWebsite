@@ -99,14 +99,15 @@ const Image = styled.div`
 const StyledText = styled.p`
   position: absolute;
   font-size: 55px;
-  top: ${props => props.top};
-  right: ${props => props.right};
+  top: 0;
+  right: 0;
   font-family: 'Montserrat', sans-serif;
-  transform: rotate(-90deg) translateY(-50%);
+  transform: rotate(-90deg) translate(-55vw, -45vw);
   font-weight: 900;
   letter-spacing: 10px;
   color: #fff;
   z-index: 3;
+  width: 95vw;
 `;
 const Circle = styled.div`
   position: absolute;
@@ -140,7 +141,8 @@ const Circle = styled.div`
     }
   }
   &.second {
-    right: 25%;
+    right: 30%;
+    z-index: 17;
   }
 `;
 
@@ -267,9 +269,6 @@ class PortfolioComponent extends Component {
           </ContainerPhotoNumber>
         </ScrollAnimation>
         <StyledText top={top} right={right}>
-          {project}
-        </StyledText>
-        <StyledText className="front" top={top} right={right}>
           {project}
         </StyledText>
         <CircleButton
