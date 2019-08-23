@@ -15,10 +15,15 @@ to{
 `;
 
 const Container = styled.div`
+  max-width: 1600px;
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
   position: relative;
   margin-bottom: 50px;
+  @media (min-width: 1200px) {
+    margin-bottom: 100px;
+  }
   &:nth-of-type(4) {
     margin-bottom: 0;
   }
@@ -69,18 +74,19 @@ const ContainerPhotoNumber = styled.div`
   justify-content: center;
   align-items: center;
   width: 70vw;
-  p {
-    font-size: 120px;
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 2px #333;
-    position: absolute;
-    top: 12%;
-    transform: translateY(-10%);
-    right: 0;
-    @media (min-width: 768px) {
-      font-size: 180px;
-    }
+`;
+
+const StyledNumber = styled.p`
+  font-size: 120px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #333;
+  position: absolute;
+  top: 12%;
+  transform: translateY(-10%);
+  right: 0;
+  @media (min-width: 768px) {
+    font-size: 180px;
   }
 `;
 
@@ -101,6 +107,11 @@ const Image = styled.div`
     width: 70%;
     top: 5%;
   }
+  @media (min-width: 1400px) {
+    width: 33%;
+    top: 5%;
+    left: 15%;
+  }
 `;
 
 const StyledText = styled.p`
@@ -115,6 +126,19 @@ const StyledText = styled.p`
   color: #fff;
   z-index: 3;
   width: 95vw;
+  @media (min-width: 1400px) {
+    transform: rotate(0) translate(-50%, 0);
+    top: 15%;
+    left: 50%;
+    font-size: 90px;
+    width: 100%;
+    z-index: -1;
+    &.front {
+      color: transparent;
+      -webkit-text-stroke: 1px #fff;
+      z-index: 5;
+    }
+  }
 `;
 const Circle = styled.div`
   position: absolute;
@@ -173,6 +197,26 @@ const StyledP = styled.p`
   @media (min-width: 768px) {
     left: 40%;
     font-size: 18px;
+  }
+  @media (min-width: 1024px) {
+    left: 50%;
+  }
+  @media (min-width: 1200px) {
+    left: 55%;
+  }
+  @media (min-width: 1400px) {
+    bottom: 0;
+    top: 50%;
+    left: 40%;
+    transform: rotate(90deg) translate(-25vh, 0vh);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  @media (min-width: 1600px) {
+    left: 50%;
+  }
+  @media (min-width: 1800px) {
+    left: 65%;
   }
 `;
 
@@ -282,10 +326,11 @@ class PortfolioComponent extends Component {
         <ScrollAnimation animateIn="fadeInLeft" animateOnce>
           <ContainerPhotoNumber>
             <Image image={imageUrl} />
-            <p>{number}</p>
+            <StyledNumber>{number}</StyledNumber>
+            <StyledText className="front">{project}</StyledText>
+            <StyledText>{project}</StyledText>
           </ContainerPhotoNumber>
         </ScrollAnimation>
-        <StyledText>{project}</StyledText>
         <CircleButton
           onClick={this.handleActiveInfo}
           style={{ zIndex: activeButton ? '26' : '1' }}

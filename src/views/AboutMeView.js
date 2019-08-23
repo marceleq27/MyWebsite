@@ -10,7 +10,7 @@ import PortfolioComponent from '../components/PortfolioComponent/PortfolioCompon
 
 const StyledSection = styled.section`
   overflow-x: hidden;
-  background-color: #1c1c1c;
+  background-color: #1e1e1e;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,16 +21,23 @@ const StyledSection = styled.section`
 class AboutMeView extends Component {
   state = {
     isLoaded: false,
+    isComputerActive: false,
   };
 
   componentDidMount() {
     this.setState(prevState => ({
       isLoaded: !prevState.isLoaded,
     }));
+    const window = document.body.getBoundingClientRect();
+    if (window.width > 1024) {
+      this.setState({
+        isComputerActive: true,
+      });
+    }
   }
 
   render() {
-    const { isLoaded } = this.state;
+    const { isLoaded, isComputerActive } = this.state;
     return (
       <StyledSection>
         {isLoaded ? '' : <LoadingScreen />}
@@ -44,11 +51,11 @@ class AboutMeView extends Component {
           isActive1="active"
         />
         <PortfolioComponent
-          project="CONVENTER"
+          project="CONVERTER"
           number="02"
           aboutProject="Aplikacja stworzona w celu nauki korzystania z API ,ale sprawdza się również w praktycznym użyciu. Dobrze sprawdziła się tu składnia SCSS, która znacznie ułatwiła pisanie kodu."
           link="https://github.com/marceleq27/CurrencyConverter"
-          imageUrl={`url(${conventer})`}
+          imageUrl={isComputerActive ? `url(${comnet})` : `url(${conventer})`}
           technologies="SCSS | REACT | JAVASCRIPT | API"
           isActive2="active"
         />

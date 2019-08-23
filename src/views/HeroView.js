@@ -11,7 +11,7 @@ const animation = keyframes`
     }
 
     100%{
-        transform:translateX(200%);
+        transform:translateX(100vw);
     }
 `;
 
@@ -52,6 +52,12 @@ const StyledImage = styled.img`
   display: block;
   @media (min-width: 768px) {
     max-width: 60%;
+    opacity: 1;
+  }
+  @media (min-width: 1024px) {
+    transform: translate(-50%, 0);
+    height: 100vh;
+    max-width: 50%;
     opacity: 1;
   }
 `;
@@ -125,7 +131,17 @@ const StyledP = styled.p`
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 11px;
-  animation: ${animation} 6s linear infinite;
+  width: 100vw;
+  animation: ${animation} 20s linear infinite both;
+  &:nth-of-type(2) {
+    animation: ${animation} 20s 5s linear infinite both;
+  }
+  &:nth-of-type(3) {
+    animation: ${animation} 20s 10s linear infinite both;
+  }
+  &:nth-of-type(4) {
+    animation: ${animation} 20s 15s linear infinite both;
+  }
 `;
 
 const StyledLogo = styled.img`
@@ -138,6 +154,9 @@ const StyledLogo = styled.img`
   margin: 15px 0 0 30px;
   @media (min-width: 768px) {
     height: 70px;
+  }
+  @media (min-width: 1024px) {
+    margin: 30px 0 0 45px;
   }
 `;
 
@@ -153,6 +172,9 @@ const HeroView = () => {
       <StyledButton>
         <a href="/about">Look at my projects</a>
       </StyledButton>
+      <StyledP>I want to be a junior frontend developer!</StyledP>
+      <StyledP>I want to be a junior frontend developer!</StyledP>
+      <StyledP>I want to be a junior frontend developer!</StyledP>
       <StyledP>I want to be a junior frontend developer!</StyledP>
       <CanvasDots />
     </StyledSection>
