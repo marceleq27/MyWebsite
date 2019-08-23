@@ -1,20 +1,24 @@
 {
   "files": {
     "main.css": "/MyWebsite/static/css/main.7ed9a787.chunk.css",
-    "main.js": "/MyWebsite/static/js/main.dace4afb.chunk.js",
-    "main.js.map": "/MyWebsite/static/js/main.dace4afb.chunk.js.map",
+    "main.js": "/MyWebsite/static/js/main.be82e9f0.chunk.js",
+    "main.js.map": "/MyWebsite/static/js/main.be82e9f0.chunk.js.map",
     "runtime~main.js": "/MyWebsite/static/js/runtime~main.92cfa0b6.js",
     "runtime~main.js.map": "/MyWebsite/static/js/runtime~main.92cfa0b6.js.map",
-    "static/js/2.6ac55d74.chunk.js": "/MyWebsite/static/js/2.6ac55d74.chunk.js",
-    "static/js/2.6ac55d74.chunk.js.map": "/MyWebsite/static/js/2.6ac55d74.chunk.js.map",
+    "static/js/2.48c51ef0.chunk.js": "/MyWebsite/static/js/2.48c51ef0.chunk.js",
+    "static/js/2.48c51ef0.chunk.js.map": "/MyWebsite/static/js/2.48c51ef0.chunk.js.map",
     "index.html": "/MyWebsite/index.html",
-    "precache-manifest.d0aa5a7ae58bb2cb45010f41e38d5b46.js": "/MyWebsite/precache-manifest.d0aa5a7ae58bb2cb45010f41e38d5b46.js",
+    "precache-manifest.53aaecd47df6bf76c52796482d2780fe.js": "/MyWebsite/precache-manifest.53aaecd47df6bf76c52796482d2780fe.js",
     "service-worker.js": "/MyWebsite/service-worker.js",
     "static/css/main.7ed9a787.chunk.css.map": "/MyWebsite/static/css/main.7ed9a787.chunk.css.map",
-    "static/media/comnet1.png": "/MyWebsite/static/media/comnet1.e56e22b2.png",
+    "static/media/comnet.png": "/MyWebsite/static/media/comnet.e56e22b2.png",
+    "static/media/comnetComp.png": "/MyWebsite/static/media/comnetComp.45007168.png",
     "static/media/conventer.png": "/MyWebsite/static/media/conventer.3c355a78.png",
+    "static/media/conventerComp.png": "/MyWebsite/static/media/conventerComp.d3303459.png",
     "static/media/grawernia.png": "/MyWebsite/static/media/grawernia.3efc96f7.png",
+    "static/media/grawerniaComp.png": "/MyWebsite/static/media/grawerniaComp.e5d39302.png",
     "static/media/weather.png": "/MyWebsite/static/media/weather.fc509492.png",
+    "static/media/weatherComp.png": "/MyWebsite/static/media/weatherComp.7fad2a5b.png",
     "static/media/zdj2.jpeg": "/MyWebsite/static/media/zdj2.b2169366.jpeg"
   }
 }
