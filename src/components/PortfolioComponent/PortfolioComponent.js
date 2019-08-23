@@ -46,12 +46,20 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column;
+
+    @media (min-width: 1800px) {
+      width: 80vw;
+    }
     h1 {
       margin: 20px;
       font-size: 35px;
       letter-spacing: 1px;
       font-weight: 700;
       font-family: 'Josefin Sans', sans-serif;
+      @media (min-width: 1600px) {
+        margin: 50px;
+        font-size: 75px;
+      }
     }
     p {
       margin: 20px;
@@ -59,6 +67,9 @@ const Container = styled.div`
       line-height: 120%;
       font-weight: 300;
       font-family: 'Josefin Sans', sans-serif;
+      @media (min-width: 1600px) {
+        margin: 50px;
+      }
     }
     &.activeInfo {
       opacity: 1;
@@ -88,6 +99,12 @@ const StyledNumber = styled.p`
   @media (min-width: 768px) {
     font-size: 180px;
   }
+  @media (min-width: 1024px) {
+    top: 20%;
+  }
+  @media (min-width: 1200px) {
+    top: 12%;
+  }
 `;
 
 const Image = styled.div`
@@ -107,10 +124,11 @@ const Image = styled.div`
     width: 70%;
     top: 5%;
   }
-  @media (min-width: 1400px) {
-    width: 33%;
-    top: 5%;
-    left: 15%;
+  @media (min-width: 1024px) {
+    width: 100%;
+    top: 20%;
+    height: 60%;
+    left: 0;
   }
 `;
 
@@ -126,9 +144,12 @@ const StyledText = styled.p`
   color: #fff;
   z-index: 3;
   width: 95vw;
-  @media (min-width: 1400px) {
+  @media (min-width: 768px) {
+    transform: rotate(-90deg) translate(-55vw, -15vw);
+  }
+  @media (min-width: 1024px) {
     transform: rotate(0) translate(-50%, 0);
-    top: 15%;
+    top: 32%;
     left: 50%;
     font-size: 90px;
     width: 100%;
@@ -138,6 +159,9 @@ const StyledText = styled.p`
       -webkit-text-stroke: 1px #fff;
       z-index: 5;
     }
+  }
+  @media (min-width: 1200px) {
+    top: 15%;
   }
 `;
 const Circle = styled.div`
@@ -157,6 +181,7 @@ const Circle = styled.div`
     width: 70px;
     height: 70px;
   }
+
   &:hover {
     background-color: #fff;
   }
@@ -181,6 +206,9 @@ const Circle = styled.div`
   &.second {
     right: 30%;
     z-index: 17;
+    @media (min-width: 1024px) {
+      right: 15%;
+    }
   }
 `;
 
@@ -198,24 +226,21 @@ const StyledP = styled.p`
     left: 40%;
     font-size: 18px;
   }
+  @media (min-width: 1024px) and (min-height: 1200px) {
+    left: 30%;
+  }
   @media (min-width: 1024px) {
-    left: 50%;
-  }
-  @media (min-width: 1200px) {
-    left: 55%;
-  }
-  @media (min-width: 1400px) {
-    bottom: 0;
-    top: 50%;
-    left: 40%;
     transform: rotate(90deg) translate(-25vh, 0vh);
     font-size: 20px;
     font-weight: 700;
+    bottom: 0;
+    top: 50%;
+    width: auto;
   }
-  @media (min-width: 1600px) {
-    left: 50%;
+  @media (min-width: 1200px) {
+    left: 45%;
   }
-  @media (min-width: 1800px) {
+  @media (min-width: 1700px) {
     left: 65%;
   }
 `;
@@ -257,6 +282,7 @@ const CircleButton = styled.button`
     width: 70px;
     height: 70px;
   }
+
   p {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 900;
