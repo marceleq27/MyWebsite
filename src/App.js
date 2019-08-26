@@ -25,9 +25,9 @@ class App extends Component {
               <CSSTransition key={location.key} classNames="fade" timeout={300}>
                 <Switch location={location}>
                   <Route exact path="/" component={HeroView} />
-                  <Route exact path="/information" component={InformationView} />
-                  <Route exact path="/about" component={AboutMeView} />
-                  <Route exact path="/contact" component={ContactView} />
+                  <Route path="/information" component={InformationView} />
+                  <Route path="/about" component={AboutMeView} />
+                  <Route path="/contact" component={ContactView} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

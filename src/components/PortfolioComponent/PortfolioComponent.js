@@ -46,7 +46,6 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column;
-
     @media (min-width: 1800px) {
       width: 80vw;
     }
@@ -55,7 +54,6 @@ const Container = styled.div`
       font-size: 35px;
       letter-spacing: 1px;
       font-weight: 700;
-      font-family: 'Josefin Sans', sans-serif;
       @media (min-width: 1600px) {
         margin: 50px;
         font-size: 75px;
@@ -66,7 +64,6 @@ const Container = styled.div`
       font-size: 25px;
       line-height: 120%;
       font-weight: 300;
-      font-family: 'Josefin Sans', sans-serif;
       @media (min-width: 1600px) {
         margin: 50px;
       }
@@ -80,7 +77,6 @@ const Container = styled.div`
 const ContainerPhotoNumber = styled.div`
   position: relative;
   display: flex;
-  overflow: hidden;
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -94,25 +90,19 @@ const StyledNumber = styled.p`
   -webkit-text-stroke: 2px #333;
   position: absolute;
   top: 12%;
-  transform: translateY(-10%);
   right: 0;
+  transform: translateY(-10%);
   @media (min-width: 768px) {
     font-size: 180px;
-  }
-  @media (min-width: 1024px) {
-    top: 20%;
-  }
-  @media (min-width: 1200px) {
-    top: 12%;
   }
 `;
 
 const Image = styled.div`
   position: absolute;
-  left: 0%;
+  left: 0;
   top: 10%;
-  right: 0%;
-  bottom: 0%;
+  right: 0;
+  bottom: 0;
   width: 85%;
   background-image: ${props => props.image};
   background-position: center;
@@ -128,7 +118,6 @@ const Image = styled.div`
     width: 100%;
     top: 20%;
     height: 60%;
-    left: 0;
   }
 `;
 
@@ -149,9 +138,9 @@ const StyledText = styled.p`
   }
   @media (min-width: 1024px) {
     transform: rotate(0) translate(-50%, 0);
-    top: 32%;
+    top: 20%;
     left: 50%;
-    font-size: 90px;
+    font-size: 60px;
     width: 100%;
     z-index: -1;
     &.front {
@@ -160,58 +149,15 @@ const StyledText = styled.p`
       z-index: 5;
     }
   }
+  @media (min-width: 1024px) and (min-height: 1200px) {
+    font-size: 90px;
+    top: 32%;
+  }
   @media (min-width: 1200px) {
     top: 15%;
+    font-size: 90px;
   }
 `;
-const Circle = styled.div`
-  position: absolute;
-  bottom: 6%;
-  right: 5%;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  z-index: 10;
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (min-width: 768px) {
-    width: 70px;
-    height: 70px;
-  }
-
-  &:hover {
-    background-color: #fff;
-  }
-  &:hover a {
-    color: #2741b7;
-  }
-  a {
-    margin: 0 auto;
-    font-weight: 300;
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: #fff;
-    svg {
-      color: #000;
-      font-size: 20px;
-      animation: ${rotate} 4s linear infinite;
-      @media (min-width: 768px) {
-        font-size: 25px;
-      }
-    }
-  }
-  &.second {
-    right: 30%;
-    z-index: 17;
-    @media (min-width: 1024px) {
-      right: 15%;
-    }
-  }
-`;
-
 const StyledP = styled.p`
   position: absolute;
   bottom: 45%;
@@ -230,15 +176,13 @@ const StyledP = styled.p`
     left: 30%;
   }
   @media (min-width: 1024px) {
-    transform: rotate(90deg) translate(-25vh, 0vh);
+    transform: rotate(90deg) translate(-30vh, 0vh);
     font-size: 20px;
     font-weight: 700;
     bottom: 0;
     top: 50%;
-    width: auto;
-  }
-  @media (min-width: 1200px) {
     left: 45%;
+    width: auto;
   }
   @media (min-width: 1700px) {
     left: 65%;
@@ -275,16 +219,19 @@ const CircleButton = styled.button`
   background-color: #fff;
   border-radius: 50%;
   transition: 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  &:hover {
+    background-color: #000;
+    p {
+      color: #fff;
+    }
+  }
   @media (min-width: 768px) {
     width: 70px;
     height: 70px;
   }
-
   p {
-    font-family: 'Josefin Sans', sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
     margin: 0 auto;
@@ -294,47 +241,68 @@ const CircleButton = styled.button`
       font-size: 20px;
     }
   }
+  &.second {
+    bottom: 6%;
+    right: 30%;
+    z-index: 17;
+    &:hover {
+      svg {
+        color: #fff;
+      }
+    }
+    @media (min-width: 1024px) {
+      right: 15%;
+    }
+    a {
+      text-decoration: none;
+      svg {
+        color: #000;
+        font-size: 20px;
+        animation: ${rotate} 4s linear infinite;
+        @media (min-width: 768px) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
 `;
 
 class PortfolioComponent extends Component {
   state = {
     activeButton: false,
+    isComputerActive: false,
   };
 
+  componentDidMount() {
+    this.setState(prevState => ({
+      isLoaded: !prevState.isLoaded,
+    }));
+    const window = document.body.getBoundingClientRect();
+    if (window.width >= 1024) {
+      this.setState({
+        isComputerActive: true,
+      });
+    }
+  }
+
   handleActiveInfo = e => {
-    const info1 = document.querySelector('.info01');
-    const info2 = document.querySelector('.info02');
-    const info3 = document.querySelector('.info03');
-    const info4 = document.querySelector('.info04');
+    const { number } = this.props;
+    const info = document.querySelector(`.info${number}`);
     const button = document.querySelector('.hamburger');
+    if (e.target.classList[0] || e.currentTarget.classList[0]) {
+      if (info.classList.contains('info01')) {
+        button.classList.toggle('noview');
+      }
+      info.classList.toggle('activeInfo');
+    }
     document.body.classList.toggle('noscroll');
     this.setState(prevState => ({
       activeButton: !prevState.activeButton,
     }));
-
-    switch (e.target.classList[0] || e.currentTarget.classList[0]) {
-      case 'button01':
-        info1.classList.toggle('activeInfo');
-        button.classList.toggle('noview');
-        break;
-      case 'button02':
-        info2.classList.toggle('activeInfo');
-        break;
-      case 'button03':
-        info3.classList.toggle('activeInfo');
-        break;
-      case 'button04':
-        info4.classList.toggle('activeInfo');
-        break;
-      default:
-        this.setState(prevState => ({
-          activeButton: !prevState.activeButton,
-        }));
-    }
   };
 
   render() {
-    const { activeButton } = this.state;
+    const { activeButton, isComputerActive } = this.state;
     const {
       project,
       number,
@@ -345,13 +313,14 @@ class PortfolioComponent extends Component {
       isActive2,
       isActive3,
       isActive4,
-      imageUrl,
+      imageUrlMobile,
+      imageUrlDesktop,
     } = this.props;
     return (
       <Container>
         <ScrollAnimation animateIn="fadeInLeft" animateOnce>
           <ContainerPhotoNumber>
-            <Image image={imageUrl} />
+            <Image image={isComputerActive ? imageUrlDesktop : imageUrlMobile} />
             <StyledNumber>{number}</StyledNumber>
             <StyledText className="front">{project}</StyledText>
             <StyledText>{project}</StyledText>
@@ -368,11 +337,11 @@ class PortfolioComponent extends Component {
           <h1>{project}</h1>
           <p>{aboutProject}</p>
         </div>
-        <Circle className="second">
+        <CircleButton className="second">
           <a href={link}>
             <FontAwesomeIcon icon={faCode} />
           </a>
-        </Circle>
+        </CircleButton>
         <StyledP>{technologies}</StyledP>
         <StyledDots>
           <span className={isActive1} />
@@ -390,7 +359,8 @@ PortfolioComponent.propTypes = {
   number: PropTypes.string.isRequired,
   aboutProject: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
+  imageUrlDesktop: PropTypes.string,
+  imageUrlMobile: PropTypes.string,
   technologies: PropTypes.string.isRequired,
   isActive1: PropTypes.string,
   isActive2: PropTypes.string,
@@ -403,6 +373,8 @@ PortfolioComponent.defaultProps = {
   isActive2: '',
   isActive3: '',
   isActive4: '',
+  imageUrlDesktop: null,
+  imageUrlMobile: null,
 };
 
 export default PortfolioComponent;

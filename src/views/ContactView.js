@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faTimes, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 const animation = keyframes`
  0%{
@@ -96,9 +96,9 @@ const StyledButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 10px;
-  border: 2px solid #1c1c1c;
+  /* border: 2px solid #1c1c1c; */
   border-radius: 50%;
-  animation: ${rotate} 5s linear infinite;
+  animation: ${rotate} 7s linear infinite;
   cursor: pointer;
   transition: 0.3s;
   &:hover svg {
@@ -110,7 +110,7 @@ const StyledButton = styled.button`
   svg {
     transition: 0.3s;
     padding: 5px;
-    font-size: 35px;
+    font-size: 45px;
     color: #1c1c1c;
   }
 `;
@@ -177,11 +177,10 @@ class ContactView extends Component {
     return (
       <>
         <StyledSection>
-          <h1>PO</h1>
           <p>
-            <span>rozmawiajmy.</span>
-            <span>pracujmy.</span>
-            <span>znajmy się.</span>
+            <span>Rozmawiajmy.</span>
+            <span>Pracujmy.</span>
+            <span>Poznajmy się.</span>
           </p>
           <h2>MB</h2>
         </StyledSection>
@@ -194,6 +193,11 @@ class ContactView extends Component {
           <a href="tel:696-533-998">
             <StyledButton type="button" onClick={this.handlePhone}>
               <FontAwesomeIcon icon={faPhone} />
+            </StyledButton>
+          </a>
+          <a href="https://github.com/marceleq27">
+            <StyledButton type="button">
+              <FontAwesomeIcon icon={faCodeBranch} />
             </StyledButton>
           </a>
           <StyledDiv className="mail">

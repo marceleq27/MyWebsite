@@ -126,22 +126,22 @@ class NavigationView extends Component {
         <StyledNavigation>
           <ul>
             <li>
-              <NavLink to="/" href="#section1" onClick={this.handleActiveState}>
+              <NavLink to="/" onClick={this.handleActiveState}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/information" href="#section2" onClick={this.handleActiveState}>
+              <NavLink to="/information" onClick={this.handleActiveState}>
                 About me
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" href="#section3" onClick={this.handleActiveState}>
+              <NavLink to="/about" onClick={this.handleActiveState}>
                 Portfolio
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" href="#section4" onClick={this.handleActiveState}>
+              <NavLink to="/contact" onClick={this.handleActiveState}>
                 Contact
               </NavLink>
             </li>
@@ -153,7 +153,11 @@ class NavigationView extends Component {
               </a>
             </button>
             <button type="button">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a
+                href="www.linkedin.com/in/marcel-bednarz16"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 LINKEDIN
               </a>
             </button>

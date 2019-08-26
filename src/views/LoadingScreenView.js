@@ -40,19 +40,13 @@ const StyledSecondH3 = styled(StyledH3)`
 class LoadingScreenView extends Component {
   state = {};
 
-  handleUnmount = () => {
-    const box = document.querySelector('.box');
-    box.style.display = 'none';
-  };
-
   render() {
     return (
       <Tween
         from={{ opacity: 1 }}
-        to={{ opacity: 0 }}
+        to={{ opacity: 0, zIndex: -1, display: 'none' }}
         duration={0.9}
         delay={1.5}
-        onComplete={this.handleUnmount}
       >
         <StyledBox className="box">
           <Tween from={{ y: '-100%' }} to={{ y: '100%' }} duration="5">
