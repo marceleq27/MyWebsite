@@ -161,6 +161,7 @@ const StyledLogo = styled.img`
 `;
 
 const HeroView = () => {
+  const IDs = [1, 2, 3, 4];
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
@@ -172,10 +173,9 @@ const HeroView = () => {
       <StyledButton>
         <a href="/about">Look at my projects</a>
       </StyledButton>
-      <StyledP>I want to be a junior frontend developer!</StyledP>
-      <StyledP>I want to be a junior frontend developer!</StyledP>
-      <StyledP>I want to be a junior frontend developer!</StyledP>
-      <StyledP>I want to be a junior frontend developer!</StyledP>
+      {IDs.map(item => (
+        <StyledP key={item}>I want to be a junior frontend developer!</StyledP>
+      ))}
       <CanvasDots />
     </StyledSection>
   );

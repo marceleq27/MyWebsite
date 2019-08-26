@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
+import textinformation from '../utils/textInformation';
 
 const StyledSection = styled.section`
   background-color: #1c1c1c;
@@ -110,45 +111,12 @@ const InformationView = () => {
         </p>
       </StyledDiv>
       <StyledDiv>
-        <Container>
-          <h2>Tylko Praktyka</h2>
-          <p>
-            Przerobiłem mnóstwo kursów. Ale czym byłaby wiedza bez swojego poparcia w kodzie?
-            Dlatego też staram się pobudzać swoją ciekawość i pisać coraz to lepsze projekty. Dobrze
-            by było, abyś je zobaczył/a.
-          </p>
-        </Container>
-        <Container>
-          <h2>Ciekawość</h2>
-          <p>
-            Podstawa pracy programisty. Bez tego nie byłoby mnie tutaj.Jestem tego pewien. Uwielbiam
-            próbować nowych rzeczy w kodzie, często błądzę, ale czy bez tego było by fajnie?
-          </p>
-        </Container>
-        <Container>
-          <h2>Zaangażowanie</h2>
-          <p>
-            Oraz współpraca. Kluczowe cechy. Przy tworzeniu projektów komercyjnych nadal się uczę,
-            ale one pozwalają mi na uzyskanie coraz to lepszej efektywności. A to wszystko ponieważ
-            daję z siebie zawsze 100%.
-          </p>
-        </Container>
-        <Container>
-          <h2>Perfekcjonizm</h2>
-          <p>
-            Regularna praca z grafikiem to nie lada wyzwanie. Zawsze &quot;pixel perfect&quot;. Tego
-            się nauczyłem i to chcę kontynuować. Do tego dochodzi czystość w kodzie i mamy definicję
-            nagłówka.
-          </p>
-        </Container>
-        <Container>
-          <h2>Niemożliwe?</h2>
-          <p>
-            Nie istnieje. Jeśli mam okazję, zawsze spróbuję. A jeśli nie wyjdzie - będę próbował, aż
-            w końcu zadziała. Wynika to niestety z mojej ciekawości i chęci rozwoju. Czy taka
-            zachłanność jest dobra? Nie wiem, póki co się świetnie sprawdza.
-          </p>
-        </Container>
+        {textinformation.map(data => (
+          <Container key={data.id}>
+            <h2>{data.header}</h2>
+            <p>{data.paragraph}</p>
+          </Container>
+        ))}
       </StyledDiv>
       <ScrollAnimation animateOnce animateIn="fadeInUp">
         <StyledA href="/contact">

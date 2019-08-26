@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faTimes, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import textContact from '../utils/textContact';
 
 const animation = keyframes`
  0%{
@@ -55,6 +56,12 @@ const StyledSection = styled.section`
     text-transform: uppercase;
     transform: translate(-50%, -50%);
     line-height: 130%;
+    @media (min-width: 768px) {
+      font-size: 50px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 80px;
+    }
     span {
       position: absolute;
       transform: translateX(-50%);
@@ -96,9 +103,8 @@ const StyledButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 10px;
-  /* border: 2px solid #1c1c1c; */
   border-radius: 50%;
-  animation: ${rotate} 7s linear infinite;
+  animation: ${rotate} 10s linear infinite;
   cursor: pointer;
   transition: 0.3s;
   &:hover svg {
@@ -185,21 +191,18 @@ class ContactView extends Component {
           <h2>MB</h2>
         </StyledSection>
         <StyledFooter>
-          <a href="mailto:marcel.bednarz16@gmail.com">
-            <StyledButton type="button" onClick={this.handleEmail}>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </StyledButton>
-          </a>
-          <a href="tel:696-533-998">
-            <StyledButton type="button" onClick={this.handlePhone}>
-              <FontAwesomeIcon icon={faPhone} />
-            </StyledButton>
-          </a>
-          <a href="https://github.com/marceleq27">
-            <StyledButton type="button">
-              <FontAwesomeIcon icon={faCodeBranch} />
-            </StyledButton>
-          </a>
+          {textContact.map(data => (
+            <a
+              href={data.href}
+              key={data.id}
+              // eslint-disable-next-line no-nested-ternary
+              onClick={data.id === 1 ? this.handleEmail : data.id === 2 ? this.handlePhone : null}
+            >
+              <StyledButton type="button">
+                {data.id === 4 ? data.icon : <FontAwesomeIcon icon={data.icon} />}
+              </StyledButton>
+            </a>
+          ))}
           <StyledDiv className="mail">
             <p>marcel.bednarz16@gmail.com</p>
             <button type="button" className="close" onClick={this.handleEmail}>

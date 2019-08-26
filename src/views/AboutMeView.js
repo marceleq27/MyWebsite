@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import '../theme/animate.css';
 import PortfolioComponent from '../components/PortfolioComponent/PortfolioComponent';
-import data from '../theme/data';
+import data from '../utils/data';
 
 const StyledSection = styled.section`
   overflow-x: hidden;

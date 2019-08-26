@@ -154,7 +154,7 @@ class NavigationView extends Component {
             </button>
             <button type="button">
               <a
-                href="www.linkedin.com/in/marcel-bednarz16"
+                href="https://linkedin.com/in/marcel-bednarz16"
                 target="_blank"
                 rel="noopener noreferrer"
               >

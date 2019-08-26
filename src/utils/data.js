@@ -1,11 +1,11 @@
-import comnet from '../utils/comnet.png';
-import comnetComp from '../utils/comnetComp.png';
-import conventer from '../utils/conventer.png';
-import conventerComp from '../utils/conventerComp.png';
-import weather from '../utils/weather.png';
-import weatherComp from '../utils/weatherComp.png';
-import grawernia from '../utils/grawernia.png';
-import grawerniaComp from '../utils/grawerniaComp.png';
+import comnet from './comnet.png';
+import comnetComp from './comnetComp.png';
+import conventer from './conventer.png';
+import conventerComp from './conventerComp.png';
+import weather from './weather.png';
+import weatherComp from './weatherComp.png';
+import grawernia from './grawernia.png';
+import grawerniaComp from './grawerniaComp.png';
 
 const data = [
   {
