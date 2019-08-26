@@ -6,6 +6,10 @@ import textinformation from '../utils/textInformation';
 const StyledSection = styled.section`
   background-color: #1c1c1c;
   color: #fff;
+  padding: 0 5vw;
+  @media (min-width: 768px) {
+    padding: 0 10vw;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -16,8 +20,9 @@ const StyledDiv = styled.div`
   justify-content: space-around;
   min-height: 100vh;
   margin-bottom: 50px;
-  &:nth-last-of-type(1) {
-    margin-bottom: 0;
+  width: 50vw;
+  @media (min-width: 1024px) {
+    margin-bottom: 100px;
   }
   h1 {
     margin-top: 50px;
@@ -25,21 +30,57 @@ const StyledDiv = styled.div`
     font-size: 50px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 3px;
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 70px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 80px;
+    }
+    @media (min-width: 1600px) {
+      font-size: 100px;
+    }
   }
   p {
     line-height: 170%;
+    @media (min-width: 768px) {
+      font-size: 25px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 35px;
+    }
+    @media (min-width: 1400px) {
+      font-size: 35px;
+    }
+  }
+`;
+
+const StyledSectionContainer = styled.section`
+  display: grid;
+  justify-items: left;
+  align-content: center;
+  padding: 20px;
+  p {
+    line-height: 170%;
+  }
+  @media (min-width: 768px) {
+    width: 80vw;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-column-gap: 30px;
   }
 `;
 
 const Container = styled.div`
   width: 90%;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   padding: 20px 0;
-  border-bottom: 1px solid #333;
-  border-top: 1px solid #333;
-
-  &:nth-last-of-type(1) {
-    margin-bottom: 0;
+  @media (min-width: 1200px) {
+    width: 80%;
+  }
+  @media (min-width: 1600px) {
+    width: 70%;
   }
   h2 {
     font-weight: 700;
@@ -47,10 +88,23 @@ const Container = styled.div`
     margin-bottom: 10px;
     text-transform: uppercase;
     line-height: 120%;
+    @media (min-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 40px;
+    }
   }
   p {
     font-size: 15px;
     font-weight: 300;
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 25px;
+    }
   }
 `;
 
@@ -72,6 +126,12 @@ const StyledA = styled.a`
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     padding: 10px 0;
+    @media (min-width: 768px) {
+      font-size: 80px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 100px;
+    }
     &:hover {
       &::after {
         height: 500px;
@@ -106,18 +166,17 @@ const InformationView = () => {
         {/* <img src="" alt="" srcset=""/> */}
         <p>
           Jestem Marcel, od ponad roku zajmuję się programowaniem na front endzie. Swoja pasję
-          docelowo chciałbym zamienić w codzienną pracę. Jeśli chciałbyś podjąć współpracę ,bądź
-          zaoferować coś ciekawego, napisz lub zadzwoń śmiało.
+          docelowo chciałbym zamienić w codzienną pracę. Cały czas na tym pracuję.
         </p>
       </StyledDiv>
-      <StyledDiv>
+      <StyledSectionContainer>
         {textinformation.map(data => (
           <Container key={data.id}>
             <h2>{data.header}</h2>
             <p>{data.paragraph}</p>
           </Container>
         ))}
-      </StyledDiv>
+      </StyledSectionContainer>
       <ScrollAnimation animateOnce animateIn="fadeInUp">
         <StyledA href="/contact">
           <h1>Kontakt</h1>
