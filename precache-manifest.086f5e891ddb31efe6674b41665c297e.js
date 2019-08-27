@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b0e3a1e662533861e780bf0f81a0b2b",
+    "revision": "b3931cedede2b4b717c549a8f3e736b3",
     "url": "/MyWebsite/index.html"
   },
   {
-    "revision": "24ce77dcccb5c2482764",
+    "revision": "356a4686e6c2082dfefe",
     "url": "/MyWebsite/static/css/main.ccb2cef9.chunk.css"
   },
   {
-    "revision": "88f4da24b0a24152ef91",
-    "url": "/MyWebsite/static/js/2.c8b619a3.chunk.js"
+    "revision": "2ab6649f2ba6a5bcddf0",
+    "url": "/MyWebsite/static/js/2.72b6b3af.chunk.js"
   },
   {
-    "revision": "24ce77dcccb5c2482764",
-    "url": "/MyWebsite/static/js/main.6a98287a.chunk.js"
+    "revision": "356a4686e6c2082dfefe",
+    "url": "/MyWebsite/static/js/main.07769070.chunk.js"
   },
   {
     "revision": "77be4a14ab2346968cf8",
@@ -52,7 +52,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MyWebsite/static/media/weatherComp.7fad2a5b.png"
   },
   {
-    "revision": "b21693667bd67bef4b693d72e8082c23",
-    "url": "/MyWebsite/static/media/zdj2.b2169366.jpeg"
+    "revision": "ef2825ce5fe9dd5139f3a38418aae2da",
+    "url": "/MyWebsite/static/media/zdj2.ef2825ce.png"
   }
 ]);
