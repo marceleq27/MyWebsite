@@ -6,14 +6,10 @@ import textinformation from '../utils/textInformation';
 const StyledSection = styled.section`
   background-color: #1c1c1c;
   color: #fff;
-  padding: 0 5vw;
-  @media (min-width: 768px) {
-    padding: 0 10vw;
-  }
+  padding: 0 10vw;
 `;
 
 const StyledDiv = styled.div`
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,29 +23,35 @@ const StyledDiv = styled.div`
   h1 {
     margin-top: 50px;
     font-weight: 900;
-    font-size: 40px;
+    font-size: ${({ theme }) => theme.h1};
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 3px;
+    line-height: 120%;
     @media (min-width: 768px) {
       font-size: 70px;
     }
     @media (min-width: 1024px) {
-      font-size: 70px;
+      font-size: 80px;
     }
     @media (min-width: 1200px) {
-      font-size: 80px;
+      font-size: 90px;
     }
     @media (min-width: 1600px) {
       font-size: 100px;
     }
   }
   p {
-    line-height: 170%;
+    line-height: 27.5px;
+    font-size: ${({ theme }) => theme.p};
+    /* 162% ,*1,618*/
+    /* h3 => 20px to h2=> h3 * 1.618 */
     @media (min-width: 768px) {
       font-size: 25px;
+      line-height: 40.5px;
     }
     @media (min-width: 1024px) {
       font-size: 35px;
+      line-height: 56.5px;
     }
     @media (min-width: 1400px) {
       font-size: 35px;
@@ -103,7 +105,7 @@ const Container = styled.div`
       font-size: 20px;
     }
     @media (min-width: 1024px) {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 `;
@@ -171,10 +173,12 @@ const InformationView = () => {
       </StyledDiv>
       <StyledSectionContainer>
         {textinformation.map(data => (
-          <Container key={data.id}>
-            <h2>{data.header}</h2>
-            <p>{data.paragraph}</p>
-          </Container>
+          <ScrollAnimation key={data.id} animateOnce animateIn="fadeInUp" offset={60}>
+            <Container key={data.id}>
+              <h2>{data.header}</h2>
+              <p>{data.paragraph}</p>
+            </Container>
+          </ScrollAnimation>
         ))}
       </StyledSectionContainer>
       <ScrollAnimation animateOnce animateIn="fadeInUp">

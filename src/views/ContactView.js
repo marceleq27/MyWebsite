@@ -33,29 +33,18 @@ const StyledSection = styled.section`
   background-color: #1c1c1c;
   position: relative;
   overflow: hidden;
-  h1 {
-    text-align: center;
-    color: #fff;
-    opacity: 0.1;
-    font-size: 180px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
   p {
     text-align: center;
     color: transparent;
     -webkit-text-stroke: 0.5px #f2f2f2;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
-    font-size: 38px;
+    font-size: ${({ theme }) => theme.h2};
     position: absolute;
     top: 50%;
     left: 50%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
-    line-height: 130%;
     @media (min-width: 768px) {
       font-size: 50px;
     }
@@ -67,7 +56,7 @@ const StyledSection = styled.section`
       transform: translateX(-50%);
       width: 100vw;
       opacity: 1;
-      letter-spacing: 1px;
+      letter-spacing: 3px;
       &:nth-of-type(1) {
         animation: ${animation} 9s infinite both;
       }

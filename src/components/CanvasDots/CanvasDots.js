@@ -8,17 +8,18 @@ const StyledCanvas = styled.canvas`
   left: 0;
   top: 0;
   background-color: transparent;
+  opacity: 0;
+  transition: 0.3s;
 `;
 
 class CanvasDots extends Component {
-  state = {};
+  state = {
+    isLoaded: false,
+  };
 
   canvasRef = React.createRef();
 
   componentDidMount() {
-    this.setState(prevState => ({
-      isLoaded: !prevState.isLoaded,
-    }));
     const canvas = this.canvasRef.current;
     const context = canvas.getContext('2d');
 
@@ -35,60 +36,8 @@ class CanvasDots extends Component {
       this.radius = radius;
       this.color = color;
       this.radians = Math.random() * Math.PI * 2;
-      this.velocity = 0.01;
-      this.distanceFromCenter = randomIntFromRange(250, 300);
-
-      this.update = () => {
-        this.radians += this.velocity;
-
-        // Circular moition
-        this.x = x + Math.cos(this.radians) * this.distanceFromCenter;
-        this.y = y + Math.sin(this.radians) * this.distanceFromCenter;
-        this.draw();
-      };
-
-      this.draw = () => {
-        context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        context.fillStyle = this.color;
-        context.fill();
-        context.closePath();
-      };
-    }
-    function Dot2(x, y, radius, color) {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-      this.color = color;
-      this.radians = Math.random() * Math.PI * 2;
-      this.velocity = 0.01;
-      this.distanceFromCenter = randomIntFromRange(50, 150);
-
-      this.update = () => {
-        this.radians += this.velocity;
-
-        // Circular moition
-        this.x = x + Math.cos(this.radians) * this.distanceFromCenter;
-        this.y = y + Math.sin(this.radians) * this.distanceFromCenter;
-        this.draw();
-      };
-
-      this.draw = () => {
-        context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        context.fillStyle = this.color;
-        context.fill();
-        context.closePath();
-      };
-    }
-    function Dot3(x, y, radius, color) {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-      this.color = color;
-      this.radians = Math.random() * Math.PI * 2;
-      this.velocity = 0.01;
-      this.distanceFromCenter = randomIntFromRange(120, 200);
+      this.velocity = 0.005;
+      this.distanceFromCenter = randomIntFromRange(300, window.innerWidth);
 
       this.update = () => {
         this.radians += this.velocity;
@@ -111,14 +60,8 @@ class CanvasDots extends Component {
     const particles = [];
     function init() {
       // how many dots,center and size
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 10; i++) {
         particles.push(new Dot(canvas.width / 2, canvas.height / 2, 5, '#000'));
-      }
-      for (let i = 0; i < 3; i++) {
-        particles.push(new Dot2(canvas.width / 2, canvas.height / 2, 5, '#000'));
-      }
-      for (let i = 0; i < 3; i++) {
-        particles.push(new Dot3(canvas.width / 2, canvas.height / 2, 5, '#000'));
       }
     }
 
@@ -134,12 +77,17 @@ class CanvasDots extends Component {
 
     init();
     animate();
+    this.setState(prevState => ({
+      isLoaded: !prevState.isLoaded,
+    }));
   }
 
   render() {
     const { position, index, countParticles } = this.props;
+    const { isLoaded } = this.state;
     return (
       <StyledCanvas
+        style={{ opacity: isLoaded ? 1 : 0 }}
         ref={this.canvasRef}
         position={position}
         index={index}

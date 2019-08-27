@@ -46,26 +46,43 @@ const Container = styled.div`
     align-items: left;
     justify-content: center;
     flex-direction: column;
+    padding: 20px;
+    @media (min-width: 768px) {
+      width: 70vw;
+    }
     @media (min-width: 1800px) {
       width: 80vw;
     }
     h1 {
-      margin: 20px;
-      font-size: 35px;
+      font-size: ${({ theme }) => theme.h2};
+      margin-bottom: 20px;
       letter-spacing: 1px;
       font-weight: 700;
+      @media (min-width: 768px) {
+        font-size: 45px;
+      }
+      @media (min-width: 768px) {
+        font-size: 55px;
+      }
       @media (min-width: 1600px) {
-        margin: 50px;
+        margin-bottom: 50px;
         font-size: 75px;
       }
     }
     p {
-      margin: 20px;
-      font-size: 25px;
-      line-height: 120%;
+      font-size: ${({ theme }) => theme.p};
+      line-height: 27.5px;
       font-weight: 300;
+      @media (min-width: 768px) {
+        font-size: 21px;
+        line-height: 34px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 25px;
+        line-height: 40.5px;
+      }
       @media (min-width: 1600px) {
-        margin: 50px;
+        margin-bottom: 50px;
       }
     }
     &.activeInfo {

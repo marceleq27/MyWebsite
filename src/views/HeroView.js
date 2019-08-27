@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
-import zdj2 from '../utils/zdj2.jpeg';
+import zdj2 from '../utils/zdj2.png';
 import logo from '../utils/Logo4.png';
 
 const animation = keyframes`
@@ -23,106 +23,114 @@ const StyledSection = styled.section`
   text-align: center;
   max-width: 1600px;
   margin: 0 auto;
+`;
+
+const StyledDiv = styled.div`
+  position: relative;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 30vh;
+  background-image: url(${zdj2});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (min-width: 768px) {
+    height: 40vh;
+  }
+  @media (min-width: 1200px) {
+    height: 60vh;
+  }
+  @media (min-width: 1600px) {
+    height: 70vh;
+  }
   h1 {
-    font-weight: 700;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
-    font-size: 45px;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 10px 0;
-    z-index: 15;
+    font-size: ${({ theme }) => theme.h1};
+    top: 0;
+    right: 0;
+    transform: translateY(-60%);
     width: 100%;
+    letter-spacing: 1px;
+    text-align: left;
     @media (min-width: 768px) {
-      font-size: 70px;
-      padding: 13px 0;
+      letter-spacing: 3px;
+      font-size: 60px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 80px;
+    }
+    @media (min-width: 1600px) {
+      width: 85%;
     }
   }
-`;
-const StyledImage = styled.img`
-  opacity: 0.9;
-  position: absolute;
-  top: 45%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  max-width: 80%;
-  height: auto;
-  z-index: 10;
-  display: block;
-  @media (min-width: 768px) {
-    max-width: 60%;
-    opacity: 1;
-    left: 70%;
-  }
-  @media (min-width: 1024px) {
-    transform: translate(-50%, -50%);
-    height: 70vh;
-    max-width: 100%;
-  }
-  @media (min-width: 1400px) {
-    height: 100vh;
-  }
-`;
-const Number = styled.p`
-  font-weight: 700;
-  position: absolute;
-  font-size: 100px;
-  top: 75%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  color: transparent;
-  -webkit-text-stroke: 2px #000;
-  width: 100%;
-  @media (min-width: 768px) {
-    font-size: 130px;
-  }
-`;
-const StyledButton = styled.button`
-  padding: 20px;
-  background-color: #000;
-  position: absolute;
-  border: none;
-  font-size: 15px;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing: 2px;
-  font-weight: 300;
-  bottom: 13%;
-  right: 5%;
-  text-align: right;
-  transition: 0.2s;
-  z-index: 5;
-  overflow: hidden;
-  z-index: 10;
-  cursor: pointer;
-  @media (min-width: 768px) {
-    font-size: 25px;
-    padding: 25px;
-  }
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
-  &:hover a {
-    color: #000;
-  }
-  &::after {
-    content: '';
-    clear: both;
-    display: block;
+  p {
+    display: none;
+    font-weight: 700;
     position: absolute;
-    left: 0;
-    top: 0;
-    transform: translateY(100%);
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
-    z-index: -1;
-    transition: 0.2s;
+    font-size: 100px;
+    bottom: 0;
+    right: 75%;
+    transform: translateY(50%);
+    z-index: 11;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    @media (min-width: 412px) {
+      display: block;
+    }
+    @media (min-width: 1024px) {
+      font-size: 150px;
+    }
   }
-  &:hover::after {
-    transform: translateY(0);
+  button {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    transform: translateY(70%);
+    padding: 20px;
+    background-color: #000;
+    border: none;
+    font-size: ${({ theme }) => theme.p};
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-align: right;
+    transition: 0.2s;
+    z-index: 5;
+    overflow: hidden;
+    z-index: 10;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      font-size: 25px;
+      padding: 25px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    &:hover a {
+      color: #000;
+    }
+    &::after {
+      content: '';
+      clear: both;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(100%);
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      z-index: -1;
+      transition: 0.2s;
+    }
+    &:hover::after {
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -168,12 +176,13 @@ const HeroView = () => {
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
-      <StyledImage src={zdj2} alt="me" />
-      <h1>Hi, I&apos;m Marcel.</h1>
-      <Number>00</Number>
-      <StyledButton>
-        <a href="/about">Look at my projects</a>
-      </StyledButton>
+      <StyledDiv>
+        <h1>Hi, I&apos;m Marcel.</h1>
+        <p>00</p>
+        <button type="button">
+          <a href="/about">Look at my projects</a>
+        </button>
+      </StyledDiv>
       {IDs.map(item => (
         <StyledP key={item}>I want to be a junior frontend developer!</StyledP>
       ))}
