@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import ScrollAnimation from 'react-animate-on-scroll';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.jpeg';
 import logo from '../utils/Logo4.png';
@@ -22,8 +21,9 @@ const StyledSection = styled.section`
   width: 100vw;
   z-index: 5;
   text-align: center;
+  max-width: 1600px;
+  margin: 0 auto;
   h1 {
-    font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     position: absolute;
     font-size: 45px;
@@ -44,8 +44,8 @@ const StyledImage = styled.img`
   opacity: 0.9;
   position: absolute;
   top: 45%;
-  right: 0;
-  transform: translate(0, 25%);
+  left: 60%;
+  transform: translate(-50%, -50%);
   max-width: 80%;
   height: auto;
   z-index: 10;
@@ -53,16 +53,18 @@ const StyledImage = styled.img`
   @media (min-width: 768px) {
     max-width: 60%;
     opacity: 1;
+    left: 70%;
   }
   @media (min-width: 1024px) {
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
+    height: 70vh;
+    max-width: 100%;
+  }
+  @media (min-width: 1400px) {
     height: 100vh;
-    max-width: 50%;
-    opacity: 1;
   }
 `;
 const Number = styled.p`
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   font-size: 100px;
@@ -92,6 +94,7 @@ const StyledButton = styled.button`
   transition: 0.2s;
   z-index: 5;
   overflow: hidden;
+  z-index: 10;
   cursor: pointer;
   @media (min-width: 768px) {
     font-size: 25px;
@@ -165,9 +168,7 @@ const HeroView = () => {
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
-      <ScrollAnimation animateOnce animateIn="fadeInRight" offset={0}>
-        <StyledImage src={zdj2} alt="me" />
-      </ScrollAnimation>
+      <StyledImage src={zdj2} alt="me" />
       <h1>Hi, I&apos;m Marcel.</h1>
       <Number>00</Number>
       <StyledButton>

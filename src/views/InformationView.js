@@ -19,19 +19,19 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
-  margin-bottom: 50px;
-  width: 50vw;
-  @media (min-width: 1024px) {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
+  width: 80vw;
+  @media (min-width: 768px) {
+    width: 60vw;
   }
   h1 {
     margin-top: 50px;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 3px;
     @media (min-width: 768px) {
-      font-size: 60px;
+      font-size: 70px;
     }
     @media (min-width: 1024px) {
       font-size: 70px;

@@ -3,7 +3,7 @@ import { Tween } from 'react-gsap';
 import styled from 'styled-components';
 
 const StyledBox = styled.div`
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 9999;
@@ -14,7 +14,7 @@ const StyledBox = styled.div`
 `;
 
 const StyledH3 = styled.h3`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   text-align: center;
@@ -24,7 +24,6 @@ const StyledH3 = styled.h3`
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   transform: translateX(-40%) rotate(90deg);
-  overflow: hidden;
 `;
 
 const StyledSecondH3 = styled(StyledH3)`
@@ -34,7 +33,6 @@ const StyledSecondH3 = styled(StyledH3)`
   top: 30%;
   right: 50%;
   width: 100%;
-  overflow: initial;
 `;
 
 class LoadingScreenView extends Component {

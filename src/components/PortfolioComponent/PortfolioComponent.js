@@ -172,9 +172,7 @@ const StyledP = styled.p`
     left: 40%;
     font-size: 18px;
   }
-  @media (min-width: 1024px) and (min-height: 1200px) {
-    left: 30%;
-  }
+
   @media (min-width: 1024px) {
     transform: rotate(90deg) translate(-30vh, 0vh);
     font-size: 20px;
@@ -183,6 +181,15 @@ const StyledP = styled.p`
     top: 50%;
     left: 45%;
     width: auto;
+  }
+  @media (min-width: 1024px) and (max-height: 1400px) {
+    left: 30%;
+  }
+  @media (min-width: 1200px) and (max-height: 1400px) {
+    left: 40%;
+  }
+  @media (min-width: 1400px) and (max-height: 1400px) {
+    left: 50%;
   }
   @media (min-width: 1700px) {
     left: 65%;
