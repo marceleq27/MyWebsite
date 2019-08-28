@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 import textinformation from '../utils/textInformation';
@@ -115,6 +116,7 @@ const StyledA = styled.a`
   text-decoration: none;
   position: relative;
   display: block;
+
   h1 {
     position: relative;
     top: 50%;
@@ -182,7 +184,7 @@ const InformationView = () => {
         ))}
       </StyledSectionContainer>
       <ScrollAnimation animateOnce animateIn="fadeInUp">
-        <StyledA href="/contact">
+        <StyledA as={Link} to="/contact">
           <h1>Kontakt</h1>
         </StyledA>
       </ScrollAnimation>
