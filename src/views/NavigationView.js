@@ -51,13 +51,14 @@ const StyledNavigation = styled.nav`
     list-style: none;
     font-weight: 700;
     li {
-      padding: 10px 0;
+      padding: 5px 0;
       font-size: 45px;
       width: 100vw;
       text-align: center;
       a {
         text-decoration: none;
         color: #fff;
+        letter-spacing: 2px;
       }
     }
   }
@@ -132,7 +133,7 @@ class NavigationView extends Component {
             </li>
             <li>
               <NavLink to="/information" onClick={this.handleActiveState}>
-                About me
+                O mnie
               </NavLink>
             </li>
             <li>
@@ -142,7 +143,7 @@ class NavigationView extends Component {
             </li>
             <li>
               <NavLink to="/contact" onClick={this.handleActiveState}>
-                Contact
+                Kontakt
               </NavLink>
             </li>
           </ul>

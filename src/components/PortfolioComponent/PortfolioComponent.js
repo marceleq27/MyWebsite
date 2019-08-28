@@ -112,6 +112,9 @@ const StyledNumber = styled.p`
   @media (min-width: 768px) {
     font-size: 180px;
   }
+  @media (min-width: 1400px) {
+    top: 5%;
+  }
 `;
 
 const Image = styled.div`

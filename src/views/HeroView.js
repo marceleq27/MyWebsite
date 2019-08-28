@@ -20,17 +20,31 @@ const StyledSection = styled.section`
   height: 100vh;
   width: 100vw;
   z-index: 5;
+`;
+
+const Developer = styled.p`
+  position: absolute;
+  top: 80%;
+  font-size: ${({ theme }) => theme.h2};
   text-align: center;
-  max-width: 1600px;
-  margin: 0 auto;
+  width: 100%;
+  @media (min-width: 1024px) {
+    font-size: ${({ theme }) => theme.h1};
+  }
+  @media (min-width: 1200px) {
+    top: 85%;
+  }
+  @media (min-width: 1600px) {
+    top: 90%;
+  }
 `;
 
 const StyledDiv = styled.div`
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: 55%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
+  width: 100vw;
   height: 30vh;
   background-image: url(${zdj2});
   background-size: contain;
@@ -46,32 +60,30 @@ const StyledDiv = styled.div`
     height: 70vh;
   }
   h1 {
-    font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0 5%;
+    font-weight: 700;
     position: absolute;
-    font-size: ${({ theme }) => theme.h1};
+    font-size: 500%;
     top: 0;
     right: 0;
-    transform: translateY(-60%);
+    transform: translateY(-75%);
     width: 100%;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     text-align: left;
-    @media (min-width: 768px) {
-      letter-spacing: 3px;
-      font-size: 60px;
-    }
-    @media (min-width: 1024px) {
-      font-size: 80px;
+    font-family: 'Kanit', sans-serif;
+    line-height: 100%;
+    @media (min-width: 1200px) {
+      width: 85%;
     }
     @media (min-width: 1600px) {
-      width: 85%;
+      font-size: 650%;
     }
   }
   p {
     display: none;
     font-weight: 700;
     position: absolute;
-    font-size: 100px;
+    font-size: 70px;
     bottom: 0;
     right: 75%;
     transform: translateY(50%);
@@ -81,8 +93,14 @@ const StyledDiv = styled.div`
     @media (min-width: 412px) {
       display: block;
     }
+    @media (min-width: 768px) {
+      font-size: 100px;
+    }
     @media (min-width: 1024px) {
       font-size: 150px;
+    }
+    @media (min-width: 1600px) {
+      right: 70%;
     }
   }
   button {
@@ -106,6 +124,9 @@ const StyledDiv = styled.div`
     @media (min-width: 768px) {
       font-size: 25px;
       padding: 25px;
+    }
+    @media (min-width: 1600px) {
+      right: 15%;
     }
     a {
       text-decoration: none;
@@ -177,14 +198,15 @@ const HeroView = () => {
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
       <StyledDiv>
-        <h1>Hi, I&apos;m Marcel.</h1>
+        <h1>Marcel Bednarz</h1>
         <p>00</p>
         <button type="button">
-          <a href="/about">Look at my projects</a>
+          <a href={`${process.env.PUBLIC_URL}/about`}>Sprawdź moje projekty</a>
         </button>
       </StyledDiv>
+      <Developer>Front-End Developer</Developer>
       {IDs.map(item => (
-        <StyledP key={item}>I want to be a junior frontend developer!</StyledP>
+        <StyledP key={item}>Chciałbym zostać junior frontend developerem!</StyledP>
       ))}
       <CanvasDots />
     </StyledSection>
