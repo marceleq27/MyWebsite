@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.png';
@@ -201,7 +202,7 @@ const HeroView = () => {
         <h1>Marcel Bednarz</h1>
         <p>00</p>
         <button type="button">
-          <a href={`${process.env.PUBLIC_URL}/about`}>Sprawdź moje projekty</a>
+          <Link to="/about">Sprawdź moje projekty</Link>
         </button>
       </StyledDiv>
       <Developer>Front-End Developer</Developer>
