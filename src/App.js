@@ -14,48 +14,33 @@ import ContactView from './views/ContactView';
 import font from './theme/fonts';
 
 class App extends Component {
-  state = {
-    isReady: true,
-  };
-
-  componentDidMount() {
-    this.setState({
-      isReady: false,
-    });
-  }
+  state = {};
 
   render() {
-    const { isReady } = this.state;
     return (
-      <>
-        {isReady ? (
-          <LoadingScreenView />
-        ) : (
-          <ThemeProvider theme={font}>
-            <ParallaxProvider>
-              <Router basename={process.env.PUBLIC_URL}>
-                <GlobalStyles />
-                {/* <LoadingScreenView /> */}
-                <NavigationView />
-                <Route
-                  render={({ location }) => (
-                    <TransitionGroup>
-                      <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                        <Switch location={location}>
-                          <Route exact path="/" component={HeroView} />
-                          <Route path="/information" component={InformationView} />
-                          <Route path="/about" component={AboutMeView} />
-                          <Route path="/contact" component={ContactView} />
-                        </Switch>
-                      </CSSTransition>
-                    </TransitionGroup>
-                  )}
-                />
-              </Router>
-            </ParallaxProvider>
-          </ThemeProvider>
-        )}
-      </>
+      <ThemeProvider theme={font}>
+        <ParallaxProvider>
+          <Router basename={process.env.PUBLIC_URL}>
+            <GlobalStyles />
+            <LoadingScreenView />
+            <NavigationView />
+            <Route
+              render={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                    <Switch location={location}>
+                      <Route exact path="/" component={HeroView} />
+                      <Route path="/information" component={InformationView} />
+                      <Route path="/about" component={AboutMeView} />
+                      <Route path="/contact" component={ContactView} />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
+          </Router>
+        </ParallaxProvider>
+      </ThemeProvider>
     );
   }
 }
