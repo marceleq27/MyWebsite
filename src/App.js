@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import GlobalStyles from './theme/GlobalStyles';
 import './theme/animation.css';
-// import LoadingScreenView from './views/LoadingScreenView';
+import LoadingScreenView from './views/LoadingScreenView';
 import HeroView from './views/HeroView';
 import NavigationView from './views/NavigationView';
 import AboutMeView from './views/AboutMeView';
@@ -14,33 +14,48 @@ import ContactView from './views/ContactView';
 import font from './theme/fonts';
 
 class App extends Component {
-  state = {};
+  state = {
+    isReady: true,
+  };
+
+  componentDidMount() {
+    this.setState({
+      isReady: false,
+    });
+  }
 
   render() {
+    const { isReady } = this.state;
     return (
-      <ThemeProvider theme={font}>
-        <ParallaxProvider>
-          <Router basename={process.env.PUBLIC_URL}>
-            <GlobalStyles />
-            {/* <LoadingScreenView /> */}
-            <NavigationView />
-            <Route
-              render={({ location }) => (
-                <TransitionGroup>
-                  <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                    <Switch location={location}>
-                      <Route exact path="/" component={HeroView} />
-                      <Route path="/information" component={InformationView} />
-                      <Route path="/about" component={AboutMeView} />
-                      <Route path="/contact" component={ContactView} />
-                    </Switch>
-                  </CSSTransition>
-                </TransitionGroup>
-              )}
-            />
-          </Router>
-        </ParallaxProvider>
-      </ThemeProvider>
+      <>
+        {isReady ? (
+          <LoadingScreenView />
+        ) : (
+          <ThemeProvider theme={font}>
+            <ParallaxProvider>
+              <Router basename={process.env.PUBLIC_URL}>
+                <GlobalStyles />
+                {/* <LoadingScreenView /> */}
+                <NavigationView />
+                <Route
+                  render={({ location }) => (
+                    <TransitionGroup>
+                      <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                        <Switch location={location}>
+                          <Route exact path="/" component={HeroView} />
+                          <Route path="/information" component={InformationView} />
+                          <Route path="/about" component={AboutMeView} />
+                          <Route path="/contact" component={ContactView} />
+                        </Switch>
+                      </CSSTransition>
+                    </TransitionGroup>
+                  )}
+                />
+              </Router>
+            </ParallaxProvider>
+          </ThemeProvider>
+        )}
+      </>
     );
   }
 }
