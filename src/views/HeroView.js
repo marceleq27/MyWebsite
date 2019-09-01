@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
-import zdj2 from '../utils/zdj2.png';
+import LoadingScreen from './LoadingScreenView';
+import zdj2 from '../utils/zdj2.jpg';
 import logo from '../utils/Logo4.png';
 
 const animation = keyframes`
@@ -192,26 +193,45 @@ const StyledLogo = styled.img`
     margin: 30px 0 0 45px;
   }
 `;
+class HeroView extends Component {
+  state = {
+    isReady: false,
+  };
 
-const HeroView = () => {
-  const IDs = [1, 2, 3, 4];
-  return (
-    <StyledSection>
-      <StyledLogo src={logo} alt="logo" />
-      <StyledDiv>
-        <h1>Marcel Bednarz</h1>
-        <p>00</p>
-        <button type="button">
-          <Link to="/about">Sprawdź moje projekty</Link>
-        </button>
-      </StyledDiv>
-      <Developer>Front-End Developer</Developer>
-      {IDs.map(item => (
-        <StyledP key={item}>Chciałbym zostać junior frontend developerem!</StyledP>
-      ))}
-      <CanvasDots />
-    </StyledSection>
-  );
-};
+  componentDidMount() {
+    const { isReady } = this.state;
+    if (!isReady) {
+      this.setState(prevState => ({
+        isReady: !prevState.isReady,
+      }));
+    }
+  }
+
+  render() {
+    const IDs = [1, 2, 3, 4];
+    const { isReady } = this.state;
+    return (
+      <>
+        {/* {!isReady && <LoadingScreen />} */}
+        <StyledSection>
+          {!isReady && <LoadingScreen />}
+          <StyledLogo src={logo} alt="logo" />
+          <StyledDiv>
+            <h1>Marcel Bednarz</h1>
+            <p>00</p>
+            <button type="button">
+              <Link to="/about">Sprawdź moje projekty</Link>
+            </button>
+          </StyledDiv>
+          <Developer>Front-End Developer</Developer>
+          {IDs.map(item => (
+            <StyledP key={item}>Chciałbym zostać junior frontend developerem!</StyledP>
+          ))}
+          <CanvasDots />
+        </StyledSection>
+      </>
+    );
+  }
+}
 
 export default HeroView;
