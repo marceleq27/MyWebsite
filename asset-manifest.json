@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/MyWebsite/static/css/main.ccb2cef9.chunk.css",
-    "main.js": "/MyWebsite/static/js/main.5dd09480.chunk.js",
-    "main.js.map": "/MyWebsite/static/js/main.5dd09480.chunk.js.map",
+    "main.js": "/MyWebsite/static/js/main.837367b7.chunk.js",
+    "main.js.map": "/MyWebsite/static/js/main.837367b7.chunk.js.map",
     "runtime~main.js": "/MyWebsite/static/js/runtime~main.92cfa0b6.js",
     "runtime~main.js.map": "/MyWebsite/static/js/runtime~main.92cfa0b6.js.map",
     "static/js/2.c707479c.chunk.js": "/MyWebsite/static/js/2.c707479c.chunk.js",
     "static/js/2.c707479c.chunk.js.map": "/MyWebsite/static/js/2.c707479c.chunk.js.map",
     "index.html": "/MyWebsite/index.html",
-    "precache-manifest.1548c2f4e74b4bd7347c679bc6892ad3.js": "/MyWebsite/precache-manifest.1548c2f4e74b4bd7347c679bc6892ad3.js",
+    "precache-manifest.8828552e7c6e7c7903526fbff83b326e.js": "/MyWebsite/precache-manifest.8828552e7c6e7c7903526fbff83b326e.js",
     "service-worker.js": "/MyWebsite/service-worker.js",
     "static/css/main.ccb2cef9.chunk.css.map": "/MyWebsite/static/css/main.ccb2cef9.chunk.css.map",
     "static/media/comnet.png": "/MyWebsite/static/media/comnet.e56e22b2.png",
@@ -19,6 +19,6 @@
     "static/media/grawerniaComp.png": "/MyWebsite/static/media/grawerniaComp.e5d39302.png",
     "static/media/weather.png": "/MyWebsite/static/media/weather.fc509492.png",
     "static/media/weatherComp.png": "/MyWebsite/static/media/weatherComp.7fad2a5b.png",
-    "static/media/zdj2.jpg": "/MyWebsite/static/media/zdj2.bdc3afa3.jpg"
+    "static/media/zdj2.png": "/MyWebsite/static/media/zdj2.a1f5277c.png"
   }
 }
