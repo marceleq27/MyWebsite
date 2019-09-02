@@ -183,7 +183,7 @@ const InformationView = () => {
           </ScrollAnimation>
         ))}
       </StyledSectionContainer>
-      <ScrollAnimation animateOnce animateIn="fadeInUp">
+      <ScrollAnimation animateOnce animateIn="fadeInUp" offset={60}>
         <StyledA as={Link} to="/contact">
           <h1>Kontakt</h1>
         </StyledA>
