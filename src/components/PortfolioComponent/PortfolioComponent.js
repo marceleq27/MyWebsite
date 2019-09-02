@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ScrollAnimation from 'react-animate-on-scroll';
-
-const rotate = keyframes`
-from{
-  transform:rotate(0deg);
-}
-to{
-  transform:rotate(360deg);
-}
-`;
 
 const Container = styled.div`
   max-width: 1600px;
@@ -245,11 +236,12 @@ const CircleButton = styled.button`
   height: 50px;
   background-color: #fff;
   border-radius: 50%;
-  transition: 0.2s;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-family: 'Josefin Sans', sans-serif;
   &:hover {
     background-color: #000;
+    transform: scale(1.2);
     p {
       color: #fff;
     }
@@ -263,7 +255,6 @@ const CircleButton = styled.button`
     letter-spacing: 1px;
     margin: 0 auto;
     font-size: 16px;
-    animation: ${rotate} 4s linear infinite;
     @media (min-width: 768px) {
       font-size: 20px;
     }
@@ -285,7 +276,6 @@ const CircleButton = styled.button`
       svg {
         color: #000;
         font-size: 20px;
-        animation: ${rotate} 4s linear infinite;
         @media (min-width: 768px) {
           font-size: 25px;
         }

@@ -19,15 +19,6 @@ const animation = keyframes`
  }
 `;
 
-const rotate = keyframes`
-from{
-  transform:rotate(0deg);
-}
-to{
-  transform:rotate(360deg);
-}
-`;
-
 const StyledSection = styled.section`
   height: 80vh;
   background-color: #1c1c1c;
@@ -89,18 +80,21 @@ const StyledFooter = styled.footer`
 `;
 
 const StyledButton = styled.button`
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   border: none;
   padding: 10px;
-  border-radius: 50%;
-  animation: ${rotate} 10s linear infinite;
+  border-radius: 30%;
   cursor: pointer;
-  transition: 0.3s;
-  &:hover svg {
-    transform: scale(2);
-  }
+  transition: 0.2s;
   &:hover {
     padding: 25px;
+    background-color: #000;
+  }
+  &:hover svg {
+    transform: scale(1.5);
+    color: #fff;
   }
   svg {
     transition: 0.3s;
