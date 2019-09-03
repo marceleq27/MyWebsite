@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MyWebsite/static/css/main.8ffbb147.chunk.css",
+    "main.css": "/MyWebsite/static/css/main.1c060334.chunk.css",
     "main.js": "/MyWebsite/static/js/main.176c8565.chunk.js",
     "main.js.map": "/MyWebsite/static/js/main.176c8565.chunk.js.map",
     "runtime~main.js": "/MyWebsite/static/js/runtime~main.92cfa0b6.js",
@@ -8,9 +8,9 @@
     "static/js/2.c707479c.chunk.js": "/MyWebsite/static/js/2.c707479c.chunk.js",
     "static/js/2.c707479c.chunk.js.map": "/MyWebsite/static/js/2.c707479c.chunk.js.map",
     "index.html": "/MyWebsite/index.html",
-    "precache-manifest.3dfa8e1d83b371d6ae0c1a60650271ec.js": "/MyWebsite/precache-manifest.3dfa8e1d83b371d6ae0c1a60650271ec.js",
+    "precache-manifest.8df8d93abd36b976eb9ac34e28fcc462.js": "/MyWebsite/precache-manifest.8df8d93abd36b976eb9ac34e28fcc462.js",
     "service-worker.js": "/MyWebsite/service-worker.js",
-    "static/css/main.8ffbb147.chunk.css.map": "/MyWebsite/static/css/main.8ffbb147.chunk.css.map",
+    "static/css/main.1c060334.chunk.css.map": "/MyWebsite/static/css/main.1c060334.chunk.css.map",
     "static/media/comnet.png": "/MyWebsite/static/media/comnet.e56e22b2.png",
     "static/media/comnetComp.png": "/MyWebsite/static/media/comnetComp.45007168.png",
     "static/media/conventer.png": "/MyWebsite/static/media/conventer.3c355a78.png",
