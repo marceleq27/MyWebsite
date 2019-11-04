@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.jpg';
-import logo from '../utils/Logo4.png';
+import logo from '../utils/logoblack.png';
 
 const animation = keyframes`
     0%{
