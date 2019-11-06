@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66a48e77522839507aa74d0def702f68",
+    "revision": "92835dff63596d9a82fbc47607f3bfd4",
     "url": "/MyWebsite/index.html"
   },
   {
-    "revision": "76c17f18ad3de43830ed",
-    "url": "/MyWebsite/static/css/main.1c060334.chunk.css"
+    "revision": "35aafce277d61b23dfc9",
+    "url": "/MyWebsite/static/css/main.2cf961c4.chunk.css"
   },
   {
-    "revision": "462c4a80d51e106d7edf",
-    "url": "/MyWebsite/static/js/2.c707479c.chunk.js"
+    "revision": "046ca1b55781e2cb2fb9",
+    "url": "/MyWebsite/static/js/2.460710f7.chunk.js"
   },
   {
-    "revision": "76c17f18ad3de43830ed",
-    "url": "/MyWebsite/static/js/main.07dbe0c2.chunk.js"
+    "revision": "35aafce277d61b23dfc9",
+    "url": "/MyWebsite/static/js/main.a3d98984.chunk.js"
   },
   {
     "revision": "77be4a14ab2346968cf8",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e5d39302c61a4feb03c5ec5de950b35f",
     "url": "/MyWebsite/static/media/grawerniaComp.e5d39302.png"
+  },
+  {
+    "revision": "b814dcca7679674dfa47349173b618d0",
+    "url": "/MyWebsite/static/media/logoblack.b814dcca.png"
   },
   {
     "revision": "fc509492d4c5c0d566ecd7dbe00b00e8",
