@@ -1,30 +1,24 @@
 const textInformation = [
   {
     id: 1,
-    header: 'Tylko Praktyka',
-    paragraph: `Przerobiłem mnóstwo kursów. Ale czym byłaby wiedza bez swojego poparcia w kodzie?
-        Dlatego też staram się pobudzać swoją ciekawość i pisać coraz to lepsze projekty. Dobrze
-        by było, abyś je zobaczył/a.`,
+    header: 'Just Practise',
+    paragraph: `I finished a lot of courses, but is it a way to write the best code? Certainly not. I always try to spur my curiosity and write better and better projects. Feel free to check them.`,
   },
   {
     id: 2,
-    header: 'Ciekawość',
-    paragraph: `Podstawa pracy programisty. Bez tego nie byłoby mnie tutaj.Jestem tego pewien. Uwielbiam
-    próbować nowych rzeczy w kodzie, często błądzę, ale czy bez tego było by fajnie?`,
+    header: 'Curiosity',
+    paragraph: `The basis for the work of a programmer. Without this I couldn't be there. I'm sure of that. I love to learn new things and I often get lost, but would it be fun without it?`,
   },
   {
     id: 3,
-    header: 'Perfekcjonizm',
-    paragraph: `Regularna praca z grafikiem to nie lada wyzwanie. Zawsze 'pixel perfect'. Tego
-    się nauczyłem i to chcę kontynuować. Do tego dochodzi czystość w kodzie i mamy definicję
-    nagłówka.`,
+    header: 'Perfection',
+    paragraph: `Regular work with UI/UX Designer sometimes can be hard. Always 'pixel perfect'. I've learned this and i want to continue this. Plus my clean code and we have a definition from this headline.`,
   },
   {
     id: 4,
-    header: 'Niemożliwe?',
-    paragraph: `Nie istnieje. Jeśli mam okazję, zawsze spróbuję. A jeśli nie wyjdzie - będę próbował, aż
-    w końcu zadziała. Wynika to niestety z mojej ciekawości i chęci rozwoju. Czy taka
-    zachłanność jest dobra? Nie wiem, póki co się świetnie sprawdza.`,
+    header: 'Impossible?',
+    paragraph: `Doesn't exist. If I have an occasion, I always try. And if something fail - I will try as long as this work. Unfortunately, this is due to my curiosity and desire to develop.
+    Is such greed good? I don't know, it works great so far.`,
   },
 ];
 

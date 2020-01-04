@@ -1,19 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import CanvasDots from '../components/CanvasDots/CanvasDots';
 import zdj2 from '../utils/zdj2.jpg';
 import logo from '../utils/logoblack.png';
-
-const animation = keyframes`
-    0%{
-        transform:translateX(150%);
-    }
-
-    100%{
-        transform:translateX(-100vw);
-    }
-`;
 
 const StyledSection = styled.section`
   position: relative;
@@ -156,27 +146,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledP = styled.p`
-  position: fixed;
-  bottom: 2%;
-  left: 0;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  width: 100vw;
-  animation: ${animation} 20s linear infinite both;
-  &:nth-of-type(2) {
-    animation: ${animation} 20s 5s linear infinite both;
-  }
-  &:nth-of-type(3) {
-    animation: ${animation} 20s 10s linear infinite both;
-  }
-  &:nth-of-type(4) {
-    animation: ${animation} 20s 15s linear infinite both;
-  }
-`;
-
 const StyledLogo = styled.img`
   position: absolute;
   left: 0;
@@ -193,7 +162,6 @@ const StyledLogo = styled.img`
   }
 `;
 const HeroView = () => {
-  const IDs = [1, 2, 3, 4];
   return (
     <StyledSection>
       <StyledLogo src={logo} alt="logo" />
@@ -201,13 +169,10 @@ const HeroView = () => {
         <h1>Marcel Bednarz</h1>
         <p>00</p>
         <button type="button">
-          <Link to="/about">Sprawdź moje projekty</Link>
+          <Link to="/about">Check out my projects</Link>
         </button>
       </StyledDiv>
-      <Developer>Front-End Developer</Developer>
-      {IDs.map(item => (
-        <StyledP key={item}>Chciałbym zostać junior frontend developerem!</StyledP>
-      ))}
+      <Developer>Junior Front-End Developer</Developer>
       <CanvasDots />
     </StyledSection>
   );

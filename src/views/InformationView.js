@@ -166,26 +166,25 @@ const InformationView = () => {
   return (
     <StyledSection>
       <StyledDiv>
-        <h1>Cześć, poznajmy się lepiej.</h1>
-        {/* <img src="" alt="" srcset=""/> */}
+        <h1>Hi, let&apos;s get to know each other.</h1>
         <p>
-          Jestem Marcel, od ponad roku zajmuję się programowaniem na front endzie. Swoja pasję
-          docelowo chciałbym zamienić w codzienną pracę. Cały czas na tym pracuję.
+          I&apos;am Marcel, since more than year I&apos;m learning and coding as a Front End
+          Developer. Currently I&apos;m searching for an awesome projects. Maybe you have one?
         </p>
       </StyledDiv>
       <StyledSectionContainer>
-        {textinformation.map(data => (
-          <ScrollAnimation key={data.id} animateOnce animateIn="fadeInUp" offset={60}>
-            <Container key={data.id}>
-              <h2>{data.header}</h2>
-              <p>{data.paragraph}</p>
+        {textinformation.map(({ id, header, paragraph }) => (
+          <ScrollAnimation key={id} animateOnce animateIn="fadeInUp" offset={60}>
+            <Container key={id}>
+              <h2>{header}</h2>
+              <p>{paragraph}</p>
             </Container>
           </ScrollAnimation>
         ))}
       </StyledSectionContainer>
       <ScrollAnimation animateOnce animateIn="fadeInUp" offset={60}>
         <StyledA as={Link} to="/contact">
-          <h1>Kontakt</h1>
+          <h1>Contact</h1>
         </StyledA>
       </ScrollAnimation>
     </StyledSection>

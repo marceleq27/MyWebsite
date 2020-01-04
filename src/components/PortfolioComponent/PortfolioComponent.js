@@ -207,26 +207,6 @@ const StyledP = styled.p`
   }
 `;
 
-const StyledDots = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  bottom: 6%;
-  left: 5%;
-  span {
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-bottom: 5px;
-    &.active {
-      background-color: #000;
-    }
-  }
-`;
-
 const CircleButton = styled.button`
   border: none;
   position: absolute;
@@ -326,10 +306,6 @@ class PortfolioComponent extends Component {
       aboutProject,
       link,
       technologies,
-      isActive1,
-      isActive2,
-      isActive3,
-      isActive4,
       imageUrlMobile,
       imageUrlDesktop,
     } = this.props;
@@ -360,12 +336,6 @@ class PortfolioComponent extends Component {
           </a>
         </CircleButton>
         <StyledP>{technologies}</StyledP>
-        <StyledDots>
-          <span className={isActive1} />
-          <span className={isActive2} />
-          <span className={isActive3} />
-          <span className={isActive4} />
-        </StyledDots>
       </Container>
     );
   }
@@ -379,17 +349,9 @@ PortfolioComponent.propTypes = {
   imageUrlDesktop: PropTypes.string,
   imageUrlMobile: PropTypes.string,
   technologies: PropTypes.string.isRequired,
-  isActive1: PropTypes.string,
-  isActive2: PropTypes.string,
-  isActive3: PropTypes.string,
-  isActive4: PropTypes.string,
 };
 
 PortfolioComponent.defaultProps = {
-  isActive1: '',
-  isActive2: '',
-  isActive3: '',
-  isActive4: '',
   imageUrlDesktop: null,
   imageUrlMobile: null,
 };

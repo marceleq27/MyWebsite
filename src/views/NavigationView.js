@@ -7,8 +7,8 @@ const animateOpacity = keyframes`
 from{
   opacity:0;
 }
-top{
-  opacity:0;
+to{
+  opacity:1;
 }
 `;
 
@@ -133,17 +133,17 @@ class NavigationView extends Component {
             </li>
             <li>
               <NavLink to="/information" onClick={this.handleActiveState}>
-                O mnie
+                About me
               </NavLink>
             </li>
             <li>
               <NavLink to="/about" onClick={this.handleActiveState}>
-                Portfolio
+                Projects
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" onClick={this.handleActiveState}>
-                Kontakt
+                Contact
               </NavLink>
             </li>
           </ul>

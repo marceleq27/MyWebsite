@@ -24,6 +24,11 @@ const StyledSection = styled.section`
   background-color: #1c1c1c;
   position: relative;
   overflow: hidden;
+  p:first-child {
+    -webkit-text-stroke: 0;
+    color: #fff;
+    opacity: 0.2;
+  }
   p {
     text-align: center;
     color: transparent;
@@ -166,10 +171,11 @@ class ContactView extends Component {
     return (
       <>
         <StyledSection>
+          <p>Let&apos;s</p>
           <p>
-            <span>Rozmawiajmy.</span>
-            <span>Pracujmy.</span>
-            <span>Poznajmy się.</span>
+            <span>talk</span>
+            <span>work</span>
+            <span>meet</span>
           </p>
           <h2>MB</h2>
         </StyledSection>
