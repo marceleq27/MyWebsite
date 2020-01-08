@@ -1,6 +1,5 @@
 {
-  "homepage": "https://marceleq27.github.io/MyWebsite/",
-  "name": "mywebsite",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
