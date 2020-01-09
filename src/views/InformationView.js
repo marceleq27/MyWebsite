@@ -144,7 +144,7 @@ const StyledA = styled.a`
       }
     }
     &::after {
-      content: 'Dobra decyzja';
+      content: '';
       font-weight: 300;
       font-size: 15px;
       line-height: 200px;
@@ -158,6 +158,7 @@ const StyledA = styled.a`
       transition: 0.3s;
       transform: translate(-50%, -50%);
       opacity: 0;
+      border-radius: 8px;
     }
   }
 `;

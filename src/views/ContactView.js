@@ -21,28 +21,38 @@ const animation = keyframes`
 
 const StyledSection = styled.section`
   height: 80vh;
-  background-color: #1c1c1c;
+  background-color: transparent;
   position: relative;
   overflow: hidden;
   p:first-child {
-    -webkit-text-stroke: 0;
-    color: #fff;
-    opacity: 0.2;
+    -webkit-text-stroke: 0.5px #000;
+    color: transparent;
+    font-size: 450px;
+    position: absolute;
+    top: 25%;
+    font-size: 100px;
+    @media (min-width: 1024px) {
+      font-size: 300px;
+      top: 15%;
+    }
+    @media (min-width: 1400px) {
+      font-size: 450px;
+    }
   }
   p {
     text-align: center;
-    color: transparent;
-    -webkit-text-stroke: 0.5px #f2f2f2;
+    color: #000;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
     font-size: ${({ theme }) => theme.h2};
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
     @media (min-width: 768px) {
       font-size: 50px;
+      top: 15%;
     }
     @media (min-width: 1024px) {
       font-size: 80px;
@@ -53,6 +63,7 @@ const StyledSection = styled.section`
       width: 100vw;
       opacity: 1;
       letter-spacing: 3px;
+      font-size: 100px;
       &:nth-of-type(1) {
         animation: ${animation} 9s infinite both;
       }
@@ -62,17 +73,13 @@ const StyledSection = styled.section`
       &:nth-of-type(3) {
         animation: ${animation} 9s 6s infinite both;
       }
+      @media (min-width: 1024px) {
+        font-size: 300px;
+      }
+      @media (min-width: 1400px) {
+        font-size: 450px;
+      }
     }
-  }
-  h2 {
-    color: #f2f2f2;
-    font-size: 200px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 40%);
   }
 `;
 
@@ -177,7 +184,6 @@ class ContactView extends Component {
             <span>work</span>
             <span>meet</span>
           </p>
-          <h2>MB</h2>
         </StyledSection>
         <StyledFooter>
           {textContact.map(data => (
