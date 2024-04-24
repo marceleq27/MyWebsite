@@ -9,7 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.9.0",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^5.0.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
